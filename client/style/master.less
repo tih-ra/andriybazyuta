@@ -1,0 +1,119 @@
+@dark: #333333;
+@middle: #999999;
+@plain: #808080;
+@light: #c0c0c0;
+
+@font-face {
+    font-family: 'ZeroZeroIsRegular';
+    src: url('/static/fonts/zero_and_zero_is-webfont.eot');
+    src: url('/static/fonts/zero_and_zero_is-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/static/fonts/zero_and_zero_is-webfont.woff') format('woff'),
+         url('/static/fonts/zero_and_zero_is-webfont.ttf') format('truetype'),
+         url('/static/fonts/zero_and_zero_is-webfont.svg#ZeroZeroIsRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SortsMillGoudyRegular';
+    src: url('/static/fonts/GoudyStM-webfont.eot');
+    src: url('/static/fonts/GoudyStM-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/static/fonts/GoudyStM-webfont.woff') format('woff'),
+         url('/static/fonts/GoudyStM-webfont.ttf') format('truetype'),
+         url('/static/fonts/GoudyStM-webfont.svg#SortsMillGoudyRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'SortsMillGoudyItalic';
+    src: url('/static/fonts/GoudyStM-Italic-webfont.eot');
+    src: url('/static/fonts/GoudyStM-Italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/static/fonts/GoudyStM-Italic-webfont.woff') format('woff'),
+         url('/static/fonts/GoudyStM-Italic-webfont.ttf') format('truetype'),
+         url('/static/fonts/GoudyStM-Italic-webfont.svg#SortsMillGoudyItalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+body {
+  font-family: 'SortsMillGoudyRegular';
+  color: @plain;
+  margin-top: 20px;
+}
+#header {
+	color: @dark;
+	font-family: 'ZeroZeroIsRegular';
+	font-size: 123px;
+	line-height: 123px;
+	.light {
+		color: @middle;
+	}
+}
+
+#menu {
+	list-style: none;
+	margin: 0;
+	font-size: 16px;
+	line-height: 2em;
+	
+	li {
+		color: @plain;
+		display: inline;
+		text-indent: -9999px;
+		margin: 0;
+		padding: 0 12px 0 0;
+		
+	}
+	.selected {
+		color: @dark;
+	}
+}
+
+h3 {
+	font-family: 'ZeroZeroIsRegular';
+	font-size: 24px;
+	color: @plain;
+	font-weight: normal;
+	margin-bottom: 20px;
+}
+h1 {
+	font-family: 'ZeroZeroIsRegular';
+	font-size: 48px;
+	color: @plain;
+	font-weight: normal;
+	line-height: 2em;
+}
+
+button {
+	margin-right: 4px;
+	font-family: Arial;
+}
+
+p {
+	text-align: left; 
+	margin: 0px;
+}
+.to_right {
+    float: right;
+}
+#projects {
+	.description {
+		margin-top: 30px;
+		margin-bottom: 20px
+	}
+	.project_images {
+		width: 288px;
+		position: relative;
+		height: 444px;
+		background-repeat: no-repeat;
+		background-position: left center;
+		padding-left: 225px;
+		img {
+			float: right;
+			padding: 0 1px 2px 1px;
+		}
+	}
+}

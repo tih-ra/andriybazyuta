@@ -1,0 +1,15 @@
+div class: 'row', ->
+  div class: 'span14 offset1', ->
+    ul id: 'menu', ->
+      li 'PROJECTS'
+      li 'CODE'
+      li class: 'selected', -> 'PRESS'
+
+div class: 'row', ->
+  div class: 'span14 offset1', ->
+    span id: 'header', -> 
+      span 'ANDRIY'
+      span class: 'light', -> 'BAZYUTA'
+  div class: 'span14 offset1', ->
+    hr()
+  div class: 'span14 offset1', id: 'root', ->

@@ -1,0 +1,11 @@
+div class: 'span4', ->
+  h3 'PROJECTS'
+  p 'COOL is a leading international partnership practicing architecture and urban planning. Our buildings around the world insist on clever forms while inventing new options for everyday use and content. COOL is led by three partners – '
+
+div class: 'span4 offset1', ->
+  h3 'CODE'
+  p 'COOL is a leading international partnership practicing architecture and urban planning. Our buildings around the world insist on clever forms while inventing new options for everyday use and content. COOL is led by three partners – '
+
+div class: 'span4 offset1', ->
+  h3 'CONTACTS'
+  p 'COOL is a leading international partnership practicing architecture and urban planning. Our buildings around the world insist on clever forms while inventing new options for everyday use and content. COOL is led by three partners – '
