@@ -24,7 +24,7 @@
 
 ,       { "url": "routers/root_router.coffee" }
 
-,       { "url": "style/tools/bootstrap.min.css" }
+,       { "url": "style/tools/bootstrap.custom.css" }
 ,       { "url": "style/master.less" }
 
     ]
