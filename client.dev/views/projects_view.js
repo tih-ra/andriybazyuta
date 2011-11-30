@@ -83,7 +83,13 @@
     ProjectPanel.prototype.template = Templates['projects.project_panel'];
     ProjectPanel.prototype.className = 'row';
     ProjectPanel.prototype.events = {
-      'click #delete_project': 'delete'
+      'click #delete_project': 'delete',
+      'click #add_items': 'items_new'
+    };
+    ProjectPanel.prototype.items_new = function() {
+      var view;
+      view = new Andriybazyuta.Views.ProjectItems.New;
+      return $(view.render().el).modal('show');
     };
     ProjectPanel.prototype["delete"] = function() {
       this.model.destroy({

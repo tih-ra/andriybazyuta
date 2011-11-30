@@ -4,6 +4,7 @@
 ,       { "url": "lib/underscore.js" }
 ,       { "url": "lib/backbone.js" }
 ,       { "url": "lib/coffeekup.js", "method": "none" }
+,       { "url": "lib/bootstrap/bootstrap-modal.js" }
 ,       { "url": "lib/kassit.coffee"}
 
 ,       { "url": "client.coffee" }
@@ -18,9 +19,11 @@
 ,       { "url": "templates/projects/project.kup" }
 ,       { "url": "templates/projects/panel.kup" }
 ,       { "url": "templates/projects/project_panel.kup" }
+,       { "url": "templates/project_items/new.kup" }
 
 ,       { "url": "views/root_view.coffee" }
 ,       { "url": "views/projects_view.coffee" }
+,       { "url": "views/project_items_view.coffee" }
 
 ,       { "url": "routers/root_router.coffee" }
 

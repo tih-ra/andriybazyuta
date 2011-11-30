@@ -53,6 +53,11 @@ class Projects.ProjectPanel extends Backbone.View
 
   events:
     'click #delete_project' : 'delete'
+    'click #add_items' : 'items_new'
+
+  items_new: ->
+    view = new Andriybazyuta.Views.ProjectItems.New
+    $(view.render().el).modal('show')
 
   delete: ->
     @model.destroy 
