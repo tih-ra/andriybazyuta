@@ -82,13 +82,20 @@
     }
     ProjectPanel.prototype.template = Templates['projects.project_panel'];
     ProjectPanel.prototype.className = 'row';
+    ProjectPanel.prototype.initialize = function() {
+      return this.model.bind('add_items_button', function(state) {
+        return $('#add_items').button(state);
+      });
+    };
     ProjectPanel.prototype.events = {
       'click #delete_project': 'delete',
       'click #add_items': 'items_new'
     };
     ProjectPanel.prototype.items_new = function() {
       var view;
-      view = new Andriybazyuta.Views.ProjectItems.New;
+      view = new Andriybazyuta.Views.ProjectItems.New({
+        model: this.model
+      });
       return $(view.render().el).modal('show');
     };
     ProjectPanel.prototype["delete"] = function() {

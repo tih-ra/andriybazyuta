@@ -17,8 +17,15 @@
     }
     New.prototype.template = Templates['project_items.new'];
     New.prototype.className = 'modal hide fade';
+    New.prototype.events = {
+      'click .close': 'reset_add_items_button'
+    };
+    New.prototype.reset_add_items_button = function() {
+      return this.model.trigger('add_items_button', 'reset');
+    };
     New.prototype.render = function() {
       $(this.el).html(this.template.render());
+      this.model.trigger('add_items_button', 'loading');
       return this;
     };
     return New;

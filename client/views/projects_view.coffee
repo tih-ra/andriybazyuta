@@ -51,12 +51,16 @@ class Projects.ProjectPanel extends Backbone.View
   template: Templates['projects.project_panel']
   className: 'row'
 
+  initialize: ->
+    @model.bind 'add_items_button', (state) -> 
+      $('#add_items').button( state )
+
   events:
     'click #delete_project' : 'delete'
     'click #add_items' : 'items_new'
 
   items_new: ->
-    view = new Andriybazyuta.Views.ProjectItems.New
+    view = new Andriybazyuta.Views.ProjectItems.New(model: @model)
     $(view.render().el).modal('show')
 
   delete: ->

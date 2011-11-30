@@ -5,6 +5,7 @@
 ,       { "url": "lib/backbone.js" }
 ,       { "url": "lib/coffeekup.js", "method": "none" }
 ,       { "url": "lib/bootstrap/bootstrap-modal.js" }
+,       { "url": "lib/bootstrap/bootstrap-buttons.js" }
 ,       { "url": "lib/kassit.coffee"}
 
 ,       { "url": "client.coffee" }
