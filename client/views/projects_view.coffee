@@ -52,8 +52,9 @@ class Projects.ProjectPanel extends Backbone.View
   className: 'row'
 
   initialize: ->
-    @model.bind 'add_items_button', (state) -> 
-      $('#add_items').button( state )
+    @model.bind 'add_items_button', (( state ) -> 
+      @$('#add_items').button( state )), @
+
 
   events:
     'click #delete_project' : 'delete'

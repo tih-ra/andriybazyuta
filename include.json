@@ -36,5 +36,7 @@
         { "url": "server.coffee" }
 ,		{ "url": "api/controllers/projects.coffee" }
 ,		{ "url": "api/models/project.coffee" }
+,       { "url": "api/models/items.coffee" }
+
     ]
 }

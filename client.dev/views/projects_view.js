@@ -83,9 +83,9 @@
     ProjectPanel.prototype.template = Templates['projects.project_panel'];
     ProjectPanel.prototype.className = 'row';
     ProjectPanel.prototype.initialize = function() {
-      return this.model.bind('add_items_button', function(state) {
-        return $('#add_items').button(state);
-      });
+      return this.model.bind('add_items_button', (function(state) {
+        return this.$('#add_items').button(state);
+      }), this);
     };
     ProjectPanel.prototype.events = {
       'click #delete_project': 'delete',
