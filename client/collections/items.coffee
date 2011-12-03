@@ -5,5 +5,5 @@ Models = Andriybazyuta.Models
 class Andriybazyuta.Collections.Items extends Backbone.Collection
   model: Models.Item
 
-#  initialize: (attributes, options) ->
-#    @project = options.project
+  initialize: (collection, options) ->
+    @url = options.url

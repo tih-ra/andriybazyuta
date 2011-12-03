@@ -15,6 +15,9 @@
       Items.__super__.constructor.apply(this, arguments);
     }
     Items.prototype.model = Models.Item;
+    Items.prototype.initialize = function(collection, options) {
+      return this.url = options.url;
+    };
     return Items;
   })();
 }).call(this);

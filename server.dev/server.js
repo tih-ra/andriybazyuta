@@ -39,6 +39,9 @@
   app.get('/projects', projects.list);
   app.del('/projects/:id', projects.destroy);
   app.post('/projects/:id/items', projects.item_post);
+  app.get('/projects/item/:version/:file', function(req, res) {
+    return res.sendfile(app.alleup_project.url(req.params['file'], req.params['version']));
+  });
   if (app.mode === 'dev') {
     app.get('/client.dev/*', function(req, res) {
       return res.sendfile('client.dev/' + req.params[0]);

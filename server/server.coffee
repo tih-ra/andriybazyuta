@@ -33,6 +33,9 @@ app.get('/projects', projects.list)
 app.del('/projects/:id', projects.destroy)
 app.post('/projects/:id/items', projects.item_post)
 
+app.get '/projects/item/:version/:file', (req, res) ->
+  res.sendfile(app.alleup_project.url(req.params['file'], req.params['version']))
+
 # serving only dev/prod files
 (app.get '/client.dev/*', (req, res) ->  res.sendfile('client.dev/' + req.params[0])) if app.mode is 'dev'
 (app.get '/client.prod/*', (req, res) -> res.sendfile('client.prod/' + req.params[0])) if app.mode is 'prod'

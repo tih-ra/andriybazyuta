@@ -22,7 +22,7 @@
       };
     };
     Item.prototype.file_url = function(version) {
-      return "/static/images/" + version + "_" + (this.get('file'));
+      return "" + this.collection.url + "/item/" + version + "/" + (this.get('file'));
     };
     return Item;
   })();
