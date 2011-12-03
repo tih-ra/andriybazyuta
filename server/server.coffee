@@ -1,7 +1,7 @@
 express = require('kassit/node_modules/express')
 mongoose = require('mongoose')
 alleup = require('alleup')
-
+alleup_storage = 'dir'
 
 
 app = Andriybazyuta = process['Andriybazyuta'] = express.createServer()
@@ -16,7 +16,7 @@ app.use(express.bodyParser())
 app.use(express.cookieParser())
 app.use(express.session({ secret: '535875805420801' }))
 
-app.alleup_project = new alleup({storage : "dir", config_file: "./alleup_project.json"});
+app.alleup_project = new alleup({storage : alleup_storage, config_file: "./alleup_project.json"});
 
 app.get '/', (req, res) -> res.sendfile('andriybazyuta.html')
 app.get '/andriybazyuta.js', (req, res) -> res.sendfile('andriybazyuta.js')
@@ -34,7 +34,8 @@ app.del('/projects/:id', projects.destroy)
 app.post('/projects/:id/items', projects.item_post)
 
 app.get '/projects/item/:version/:file', (req, res) ->
-  res.sendfile(app.alleup_project.url(req.params['file'], req.params['version']))
+  image = app.alleup_project.url(req.params['file'], req.params['version'])
+  if alleup_storage == 'dir' then res.sendfile(image) else res.redirect(image)
 
 # serving only dev/prod files
 (app.get '/client.dev/*', (req, res) ->  res.sendfile('client.dev/' + req.params[0])) if app.mode is 'dev'
