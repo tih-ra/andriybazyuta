@@ -9,7 +9,8 @@
 ,   "bin": {}
 ,   "dependencies": {
         "kassit":">=0.1.5"
-,	   "mongoose": ""    
+,	   "mongoose": "" 
+,	   "alleup": "0.0.5"   
     }
 ,   "devDependencies": {}
 ,   "engines": {

@@ -1,7 +1,8 @@
 (function() {
-  var Andriybazyuta, app, express, mongoose, projects;
+  var Andriybazyuta, alleup, app, express, mongoose, projects;
   express = require('kassit/node_modules/express');
   mongoose = require('mongoose');
+  alleup = require('alleup');
   app = Andriybazyuta = process['Andriybazyuta'] = express.createServer();
   app.mode = !(typeof getMode === "function" ? getMode() : void 0) ? 'prod' : getMode();
   app.port = 3000;
@@ -16,6 +17,10 @@
   app.use(express.session({
     secret: '535875805420801'
   }));
+  app.alleup_project = new alleup({
+    storage: "dir",
+    config_file: "./alleup_project.json"
+  });
   app.get('/', function(req, res) {
     return res.sendfile('andriybazyuta.html');
   });
@@ -33,6 +38,7 @@
   app.post('/projects', projects.post);
   app.get('/projects', projects.list);
   app.del('/projects/:id', projects.destroy);
+  app.post('/projects/:id/items', projects.item_post);
   if (app.mode === 'dev') {
     app.get('/client.dev/*', function(req, res) {
       return res.sendfile('client.dev/' + req.params[0]);

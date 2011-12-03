@@ -1,0 +1,1 @@
+(function(){Andriybazyuta.Templates['shared_uploader.progress'] = new Kassit.Template.KUP("function(){div({\"class\":\"bar\",style:\"width: 0\"},function(){return this.file.name})}")}).call(this)

@@ -1,0 +1,22 @@
+{
+	"variants": {
+		"resize": {
+			"preview": "800x600"
+		},
+		"crop": {
+			"banner": "280x444",
+			"mini": "114x221"
+		}
+	},
+	
+	"storage": {
+		"aws": {
+			"key" : "AKIAJEWPDNJCMR3Y3ARA",
+			"secret" : "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",
+			"bucket" : "pukybox"
+		},
+		"dir": {
+			"path" : "./static/images/"
+		}
+	}
+}

@@ -4,11 +4,6 @@ div class: 'row', ->
   div class: 'span4', ->
     h1 @model.get('title')
     p 'COOL’s current projects include the new headquarters for China Rail in Shanghai, the new CBTG building in NYC;'
-  div class: 'span9 offset1', ->
-    div class: 'project_images', style: "background-image: url(static/images/projects_left.jpg)", ->
-      img src: 'static/images/projects_mini1.jpg'
-      img src: 'static/images/projects_mini2.jpg'
-      img src: 'static/images/projects_mini2.jpg'
-      img src: 'static/images/projects_mini1.jpg'
+  div class: 'span9 offset1 items_preview'
 
 hr()

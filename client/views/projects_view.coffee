@@ -13,7 +13,7 @@ class Projects.Index extends Backbone.View
 #    @collection.bind('all',   @render, @)
     @collection.fetch()
 
-  addAll: -> 
+  addAll: ->
     @collection.each(@addOne)
 
   addOne: (project)->
@@ -37,13 +37,19 @@ class Projects.Project extends Backbone.View
   
   addProjectPanel: ->
     view = new Projects.ProjectPanel(model: @model)
+    console.log @model
     $(@el).append view.render().el
+  
+  addItemsPreview: ->
+    view = new Andriybazyuta.Views.Items.ProjectPreview(collection: @model.items)
+    @$('.items_preview').html view.render().el
 
   remove: ->
     $(@el).remove()
 
   render: ->
     $(@el).html @template.render(model: @model)
+    @addItemsPreview()
     @addProjectPanel()
     @
 
@@ -52,18 +58,20 @@ class Projects.ProjectPanel extends Backbone.View
   className: 'row'
 
   initialize: ->
-    @model.bind 'add_items_button', (( state ) -> 
+    @model.bind 'add_items_button_mode', (( state ) -> 
       @$('#add_items').button( state )), @
 
 
   events:
     'click #delete_project' : 'delete'
-    'click #add_items' : 'items_new'
+    'click #add_items' : 'addItems'
 
-  items_new: ->
-    view = new Andriybazyuta.Views.ProjectItems.New(model: @model)
+  addItems: ->
+    view = new Andriybazyuta.Views.SharedUploader.New(model: @model)
     $(view.render().el).modal('show')
-
+    view.attachUploader("/projects/#{@model.get('_id')}/items")
+    
+  
   delete: ->
     @model.destroy 
       success: (model, response) ->

@@ -67,6 +67,11 @@ button {
   margin-right: 4px;
   font-family: Arial;
 }
+.bar {
+  padding: 3px;
+  font-family: Arial;
+  color: #333333;
+}
 p {
   text-align: left;
   margin: 0px;

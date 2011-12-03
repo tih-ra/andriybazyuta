@@ -1,5 +1,8 @@
 express = require('kassit/node_modules/express')
 mongoose = require('mongoose')
+alleup = require('alleup')
+
+
 
 app = Andriybazyuta = process['Andriybazyuta'] = express.createServer()
 app.mode = if !(getMode?()) then 'prod' else getMode()
@@ -13,12 +16,13 @@ app.use(express.bodyParser())
 app.use(express.cookieParser())
 app.use(express.session({ secret: '535875805420801' }))
 
+app.alleup_project = new alleup({storage : "dir", config_file: "./alleup_project.json"});
+
 app.get '/', (req, res) -> res.sendfile('andriybazyuta.html')
 app.get '/andriybazyuta.js', (req, res) -> res.sendfile('andriybazyuta.js')
 app.get '/include.json', (req, res) -> res.sendfile('include.json')
 
 app.get '/static/*', (req, res) -> res.sendfile('static/' + req.params[0])
-
 
 # REST #
 require.paths.unshift( if app.mode is 'prod' then './api' else './server.dev/api');
@@ -27,6 +31,7 @@ projects = require('controllers/projects.js')
 app.post('/projects', projects.post)
 app.get('/projects', projects.list)
 app.del('/projects/:id', projects.destroy)
+app.post('/projects/:id/items', projects.item_post)
 
 # serving only dev/prod files
 (app.get '/client.dev/*', (req, res) ->  res.sendfile('client.dev/' + req.params[0])) if app.mode is 'dev'

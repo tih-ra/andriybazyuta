@@ -18,6 +18,9 @@
       description: null,
       _id: null
     };
+    Project.prototype.initialize = function() {
+      return this.items = new Andriybazyuta.Collections.Items(this.get('items'));
+    };
     Project.prototype.url = function() {
       if (this.get('_id')) {
         return "/projects/" + (this.get('_id'));

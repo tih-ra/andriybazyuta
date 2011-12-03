@@ -6,13 +6,19 @@
 ,       { "url": "lib/coffeekup.js", "method": "none" }
 ,       { "url": "lib/bootstrap/bootstrap-modal.js" }
 ,       { "url": "lib/bootstrap/bootstrap-buttons.js" }
+,       { "url": "lib/plupload/plupload.js" }
+,       { "url": "lib/plupload/plupload.html5.js" }
+
 ,       { "url": "lib/kassit.coffee"}
+,       { "url": "lib/base.coffee"}
 
 ,       { "url": "client.coffee" }
 
 ,       { "url": "models/project.coffee" }
+,       { "url": "models/item.coffee" }
 
 ,       { "url": "collections/projects.coffee" }
+,       { "url": "collections/items.coffee" }
 
 
 ,       { "url": "templates/root/layout.kup" }
@@ -20,11 +26,14 @@
 ,       { "url": "templates/projects/project.kup" }
 ,       { "url": "templates/projects/panel.kup" }
 ,       { "url": "templates/projects/project_panel.kup" }
-,       { "url": "templates/project_items/new.kup" }
+,       { "url": "templates/items/project_preview.kup" }
+,       { "url": "templates/shared_uploader/new.kup" }
+,       { "url": "templates/shared_uploader/progress.kup" }
 
 ,       { "url": "views/root_view.coffee" }
 ,       { "url": "views/projects_view.coffee" }
-,       { "url": "views/project_items_view.coffee" }
+,       { "url": "views/items_view.coffee" }
+,       { "url": "views/shared_uploader_view.coffee" }
 
 ,       { "url": "routers/root_router.coffee" }
 

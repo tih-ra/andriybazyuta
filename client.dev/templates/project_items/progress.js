@@ -1,0 +1,1 @@
+(function(){Andriybazyuta.Templates['project_items.progress'] = new Kassit.Template.KUP("function(){div({\"class\":\"bar\",style:\"width: 50%\",id:this.file.id})}")}).call(this)

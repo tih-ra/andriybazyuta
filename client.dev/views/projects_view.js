@@ -61,7 +61,15 @@
       view = new Projects.ProjectPanel({
         model: this.model
       });
+      console.log(this.model);
       return $(this.el).append(view.render().el);
+    };
+    Project.prototype.addItemsPreview = function() {
+      var view;
+      view = new Andriybazyuta.Views.Items.ProjectPreview({
+        collection: this.model.items
+      });
+      return this.$('.items_preview').html(view.render().el);
     };
     Project.prototype.remove = function() {
       return $(this.el).remove();
@@ -70,6 +78,7 @@
       $(this.el).html(this.template.render({
         model: this.model
       }));
+      this.addItemsPreview();
       this.addProjectPanel();
       return this;
     };
@@ -83,20 +92,21 @@
     ProjectPanel.prototype.template = Templates['projects.project_panel'];
     ProjectPanel.prototype.className = 'row';
     ProjectPanel.prototype.initialize = function() {
-      return this.model.bind('add_items_button', (function(state) {
+      return this.model.bind('add_items_button_mode', (function(state) {
         return this.$('#add_items').button(state);
       }), this);
     };
     ProjectPanel.prototype.events = {
       'click #delete_project': 'delete',
-      'click #add_items': 'items_new'
+      'click #add_items': 'addItems'
     };
-    ProjectPanel.prototype.items_new = function() {
+    ProjectPanel.prototype.addItems = function() {
       var view;
-      view = new Andriybazyuta.Views.ProjectItems.New({
+      view = new Andriybazyuta.Views.SharedUploader.New({
         model: this.model
       });
-      return $(view.render().el).modal('show');
+      $(view.render().el).modal('show');
+      return view.attachUploader("/projects/" + (this.model.get('_id')) + "/items");
     };
     ProjectPanel.prototype["delete"] = function() {
       this.model.destroy({

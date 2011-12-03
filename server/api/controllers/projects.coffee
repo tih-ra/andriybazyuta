@@ -1,4 +1,5 @@
-Project = require('models/project.js');
+app = Andriybazyuta = process['Andriybazyuta']
+Project = require('models/project.js')
 
 exports.post = (req, res) ->
   project = new Project(
@@ -17,3 +18,12 @@ exports.destroy = (req, res) ->
   Project.findOne _id: req.params.id, (err, project) ->
     project.remove (err) ->
       res.send 'removed'
+
+exports.item_post = (req, res) ->
+  app.alleup_project.upload req, res, (err, file, res) ->
+    if err then res.send(err)
+    Project.findById req.params.id, (err, project) ->
+      project.items.push({file: file})
+      project.save()
+      res.write(file)
+      res.end()

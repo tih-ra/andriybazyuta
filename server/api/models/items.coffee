@@ -1,9 +1,8 @@
 mongoose = require("mongoose")
-app = Andriybazyuta = process['Andriybazyuta']
 
 Schema = mongoose.Schema
-postSchema = new Schema(
+itemsSchema = new Schema(
   file: String
 )
 
-module.exports = app.db.model("Items", postSchema)
+module.exports = itemsSchema
