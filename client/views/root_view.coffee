@@ -1,4 +1,9 @@
 Root = Andriybazyuta.Views.Root = {}
+Projects = Andriybazyuta.Views.Projects = {}
+Shared = Andriybazyuta.Views.Shared = {}
+Items = Andriybazyuta.Views.Items = {}
+
+
 Views = Andriybazyuta.Views
 
 Templates = Andriybazyuta.Templates

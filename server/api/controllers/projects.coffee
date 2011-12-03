@@ -16,6 +16,11 @@ exports.list = (req, res) ->
 
 exports.destroy = (req, res) ->
   Project.findOne _id: req.params.id, (err, project) ->
+	
+    project.items.forEach (item) ->
+      app.alleup_project.remove item.file, (err) ->
+        if err then res.end(err)
+
     project.remove (err) ->
       res.send 'removed'
 

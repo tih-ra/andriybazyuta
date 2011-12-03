@@ -1,9 +1,8 @@
 (function() {
-  var Andriybazyuta, alleup, alleup_storage, app, express, mongoose, projects;
+  var Andriybazyuta, alleup, app, express, mongoose, projects;
   express = require('kassit/node_modules/express');
   mongoose = require('mongoose');
   alleup = require('alleup');
-  alleup_storage = 'dir';
   app = Andriybazyuta = process['Andriybazyuta'] = express.createServer();
   app.mode = !(typeof getMode === "function" ? getMode() : void 0) ? 'prod' : getMode();
   app.port = 3000;
@@ -19,7 +18,7 @@
     secret: '535875805420801'
   }));
   app.alleup_project = new alleup({
-    storage: alleup_storage,
+    storage: 'dir',
     config_file: "./alleup_project.json"
   });
   app.get('/', function(req, res) {
@@ -41,13 +40,7 @@
   app.del('/projects/:id', projects.destroy);
   app.post('/projects/:id/items', projects.item_post);
   app.get('/projects/item/:version/:file', function(req, res) {
-    var image;
-    image = app.alleup_project.url(req.params['file'], req.params['version']);
-    if (alleup_storage === 'dir') {
-      return res.sendfile(image);
-    } else {
-      return res.redirect(image);
-    }
+    return res.redirect(app.alleup_project.url(req.params['file'], req.params['version']));
   });
   if (app.mode === 'dev') {
     app.get('/client.dev/*', function(req, res) {

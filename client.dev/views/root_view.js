@@ -1,5 +1,5 @@
 (function() {
-  var Root, Templates, Views;
+  var Items, Projects, Root, Shared, Templates, Views;
   var __hasProp = Object.prototype.hasOwnProperty, __extends = function(child, parent) {
     for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; }
     function ctor() { this.constructor = child; }
@@ -9,6 +9,9 @@
     return child;
   };
   Root = Andriybazyuta.Views.Root = {};
+  Projects = Andriybazyuta.Views.Projects = {};
+  Shared = Andriybazyuta.Views.Shared = {};
+  Items = Andriybazyuta.Views.Items = {};
   Views = Andriybazyuta.Views;
   Templates = Andriybazyuta.Templates;
   Root.Layout = (function() {

@@ -1,5 +1,5 @@
 (function() {
-  var SharedUploader, Templates;
+  var Templates, Views;
   var __hasProp = Object.prototype.hasOwnProperty, __extends = function(child, parent) {
     for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; }
     function ctor() { this.constructor = child; }
@@ -8,14 +8,14 @@
     child.__super__ = parent.prototype;
     return child;
   };
-  SharedUploader = Andriybazyuta.Views.SharedUploader = {};
+  Views = Andriybazyuta.Views;
   Templates = Andriybazyuta.Templates;
-  SharedUploader.Progress = (function() {
+  Views.Shared.Progress = (function() {
     __extends(Progress, Backbone.View);
     function Progress() {
       Progress.__super__.constructor.apply(this, arguments);
     }
-    Progress.prototype.template = Templates['shared_uploader.progress'];
+    Progress.prototype.template = Templates['shared.progress'];
     Progress.prototype.className = 'progress';
     Progress.prototype.initialize = function(options) {
       this.file = options.file;

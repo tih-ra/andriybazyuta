@@ -21,6 +21,13 @@
     return Project.findOne({
       _id: req.params.id
     }, function(err, project) {
+      project.items.forEach(function(item) {
+        return app.alleup_project.remove(item.file, function(err) {
+          if (err) {
+            return res.end(err);
+          }
+        });
+      });
       return project.remove(function(err) {
         return res.send('removed');
       });
