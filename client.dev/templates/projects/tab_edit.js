@@ -1,0 +1,1 @@
+(function(){Andriybazyuta.Templates['projects.tab_edit'] = new Kassit.Template.KUP("function(){div(\"Edit Here\"),div({\"class\":\"modal-footer\"},function(){return button({\"class\":\"btn primary\"},function(){return\"Save\"})})}")}).call(this)

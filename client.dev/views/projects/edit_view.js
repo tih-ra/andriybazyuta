@@ -18,8 +18,8 @@
     Edit.prototype.template = Templates['projects.edit'];
     Edit.prototype.className = 'row';
     Edit.prototype.initialize = function() {
-      return this.model.bind('add_items_button_mode', (function(state) {
-        return this.$('#add_items').button(state);
+      return this.model.bind('edit:modal', (function(state) {
+        return this.$('#add_items').button(state ? 'loading' : 'reset');
       }), this);
     };
     Edit.prototype.events = {
@@ -31,8 +31,7 @@
       view = new Views.Projects.EditModal({
         model: this.model
       });
-      $(view.render().el).modal('show');
-      return view.attachUploader("/projects/" + (this.model.get('_id')) + "/items");
+      return $(view.render().el).modal('show');
     };
     Edit.prototype["delete"] = function() {
       this.model.destroy({

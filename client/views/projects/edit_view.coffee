@@ -6,8 +6,8 @@ class Views.Projects.Edit extends Backbone.View
   className: 'row'
 
   initialize: ->
-    @model.bind 'add_items_button_mode', (( state ) -> 
-      @$('#add_items').button( state )), @
+    @model.bind 'edit:modal', (( state ) -> 
+      @$('#add_items').button( if state then 'loading' else 'reset' )), @
 
 
   events:
@@ -17,7 +17,7 @@ class Views.Projects.Edit extends Backbone.View
   addItems: ->
     view = new Views.Projects.EditModal(model: @model)
     $(view.render().el).modal('show')
-    view.attachUploader("/projects/#{@model.get('_id')}/items")
+    
     
   
   delete: ->

@@ -1,6 +1,11 @@
 div class: 'modal-header', ->
   a href: '#', class: 'close', -> 'x'
   h3 'Add Files'
-div class: 'modal-body'
-div class: 'modal-footer', ->
-  button class: 'btn primary', id: 'upload_item_file', -> 'Upload Items'
+div class: 'modal-body', ->
+  ul class: 'tabs', ->
+    li class: 'active', -> a href: '#tab_edit', -> 'Edit'
+    li -> a href: '#tab_upload', -> 'Upload Items'
+    li -> a href: '#tab_vimeo', -> 'Add Vimeo Video'
+    li -> a href: '#tab_embed', -> 'Add Embed'
+
+  div class: 'pill-content', ->

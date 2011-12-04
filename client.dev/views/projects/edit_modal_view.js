@@ -17,47 +17,103 @@
     }
     EditModal.prototype.template = Templates['projects.edit_modal'];
     EditModal.prototype.className = 'modal hide fade';
-    EditModal.prototype.statuses = ['queued', 'uploading', 'danger', 'info'];
     EditModal.prototype.events = {
       'click .close': 'onClose'
     };
     EditModal.prototype.onClose = function() {
-      this.model.trigger('add_items_button_mode', 'reset');
-      this.removeUploader();
+      this.model.trigger('edit:modal', false);
+      this.model.unbind('edit:modal');
       return $(this.el).remove();
     };
-    EditModal.prototype.attachUploader = function(path) {
-      return this.uploader = Base.Tools.uploader(path, this);
+    EditModal.prototype.tabUpload = function() {
+      var view;
+      view = new Views.Projects.TabUpload({
+        model: this.model
+      });
+      return this.$('.pill-content').append(view.render().el);
     };
-    EditModal.prototype.removeUploader = function() {
-      return this.uploader.destroy();
+    EditModal.prototype.tabEdit = function() {
+      var view;
+      view = new Views.Projects.TabEdit({
+        model: this.model
+      });
+      return this.$('.pill-content').append(view.render().el);
     };
     EditModal.prototype.render = function() {
       $(this.el).html(this.template.render());
-      this.model.trigger('add_items_button_mode', 'loading');
+      $(document.body).append(this.el);
+      this.$('.tabs').tabs();
+      this.tabEdit();
+      this.tabUpload();
+      this.model.trigger('edit:modal', true);
       return this;
     };
-    EditModal.prototype.filesAdded = function(files) {
+    return EditModal;
+  })();
+  Views.Projects.TabEdit = (function() {
+    __extends(TabEdit, Backbone.View);
+    function TabEdit() {
+      TabEdit.__super__.constructor.apply(this, arguments);
+    }
+    TabEdit.prototype.template = Templates['projects.tab_edit'];
+    TabEdit.prototype.id = 'tab_edit';
+    TabEdit.prototype.className = 'active';
+    TabEdit.prototype.render = function() {
+      $(this.el).html(this.template.render());
+      return this;
+    };
+    return TabEdit;
+  })();
+  Views.Projects.TabUpload = (function() {
+    __extends(TabUpload, Backbone.View);
+    function TabUpload() {
+      TabUpload.__super__.constructor.apply(this, arguments);
+    }
+    TabUpload.prototype.template = Templates['projects.tab_upload'];
+    TabUpload.prototype.id = 'tab_upload';
+    TabUpload.prototype.statuses = ['queued', 'uploading', 'danger', 'info'];
+    TabUpload.prototype.initialize = function() {
+      return this.model.bind('edit:modal', this.loading, this);
+    };
+    TabUpload.prototype.loading = function(state) {
+      console.log('s');
+      if (state) {
+        return this.attachUploader("/projects/" + (this.model.get('_id')) + "/items");
+      } else {
+        return this.removeUploader();
+      }
+    };
+    TabUpload.prototype.attachUploader = function(path) {
+      return this.uploader = new Base.Tools.uploader(path, this);
+    };
+    TabUpload.prototype.removeUploader = function() {
+      return this.uploader.destroy();
+    };
+    TabUpload.prototype.render = function() {
+      $(this.el).html(this.template.render());
+      return this;
+    };
+    TabUpload.prototype.filesAdded = function(files) {
       return _(files).each(__bind(function(file) {
         var view;
         view = new Views.Shared.Progress({
           file: file
         });
-        return this.$('.modal-body').append(view.render().el);
+        return this.$('.upload').append(view.render().el);
       }, this));
     };
-    EditModal.prototype.setState = function(file) {
+    TabUpload.prototype.setState = function(file) {
       return $("#" + file.id + " > div").css({
         width: "" + file.percent + "%"
       });
     };
-    EditModal.prototype.setPercent = function(file) {};
-    EditModal.prototype.setStatus = function(file) {
+    TabUpload.prototype.setPercent = function(file) {};
+    TabUpload.prototype.setStatus = function(file) {
       var status;
       status = this.statuses[file.status - 2];
       return $("#" + file.id).addClass(status);
     };
-    EditModal.prototype.addItem = function(file) {
+    TabUpload.prototype.addItem = function(file) {
       var model;
       model = new Andriybazyuta.Models.Item;
       model.set({
@@ -65,6 +121,6 @@
       });
       return this.model.items.add(model);
     };
-    return EditModal;
+    return TabUpload;
   })();
 }).call(this);

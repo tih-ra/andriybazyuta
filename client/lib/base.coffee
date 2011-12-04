@@ -2,7 +2,7 @@ window.Base = {}
 @Base.Tools =
   
   uploader: (path, object) ->
-    uploader = new window.plupload.Uploader
+    uploader = new plupload.Uploader
       runtimes: 'html5'
       browse_button: 'upload_item_file'
       max_file_size: '50mb'
