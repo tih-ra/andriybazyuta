@@ -53,6 +53,7 @@ class Views.Projects.TabEdit extends Backbone.View
   updateAttributes: ->
     title: @$('input[name="title"]').val()
     description: @$('textarea[name="description"]').val()
+    body: @$('textarea[name="body"]').val() 
 
   render: ->
     $(@el).html @template.render(model: @model)

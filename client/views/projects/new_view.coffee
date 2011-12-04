@@ -21,9 +21,9 @@ class Views.Projects.New extends Backbone.View
         console.log errors
 
   attributes: ->
-    title: 'VIEOMUSIC'
-    body: 'Some body'
-    description: 'Some description'
+    title: 'Edit Please'
+    body: ''
+    description: ''
 	
 
   render: ->

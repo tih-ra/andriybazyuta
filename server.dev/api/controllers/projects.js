@@ -37,6 +37,7 @@
     return Project.findById(req.params.id, function(err, project) {
       project.title = req.body.title;
       project.description = req.body.description;
+      project.body = req.body.body;
       project.save();
       return res.send(project);
     });

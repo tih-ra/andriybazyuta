@@ -1,5 +1,5 @@
 div class: 'row', ->
-  div class: 'span8 description', -> 'COOL’s current projects include the new headquarters for China Rail in Shanghai, the new CBTG building in NYC; and  COOL’s current projects include the new headquarters for China Rail in Shanghai, the new CBTG building in NYC; and '
+  div class: 'span8 description', -> @model.get('body')
 div class: 'row', ->
   div class: 'span4', ->
     h1 @model.get('title')

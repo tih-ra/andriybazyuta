@@ -9,6 +9,10 @@ div ->
         label 'Description'
         div class: 'input', ->
           textarea name: 'description', rows: 5, class: 'span8', -> @model.get('description')
-        
+      div class: 'clearfix', ->
+        label 'Body'
+        div class: 'input', ->
+          textarea name: 'body', rows: 5, class: 'span8', -> @model.get('body')
+	
 div class: 'modal-footer', ->
   button class: 'btn primary', id: 'save_edited', -> 'Save'

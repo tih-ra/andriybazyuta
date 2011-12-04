@@ -29,6 +29,7 @@ exports.update = (req, res) ->
 	
     project.title = req.body.title
     project.description = req.body.description
+    project.body = req.body.body
 
     project.save()
     res.send(project)

@@ -74,7 +74,8 @@
     TabEdit.prototype.updateAttributes = function() {
       return {
         title: this.$('input[name="title"]').val(),
-        description: this.$('textarea[name="description"]').val()
+        description: this.$('textarea[name="description"]').val(),
+        body: this.$('textarea[name="body"]').val()
       };
     };
     TabEdit.prototype.render = function() {

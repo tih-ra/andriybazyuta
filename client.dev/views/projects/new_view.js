@@ -35,9 +35,9 @@
     };
     New.prototype.attributes = function() {
       return {
-        title: 'VIEOMUSIC',
-        body: 'Some body',
-        description: 'Some description'
+        title: 'Edit Please',
+        body: '',
+        description: ''
       };
     };
     New.prototype.render = function() {
