@@ -3,7 +3,7 @@ div class: 'row', ->
 div class: 'row', ->
   div class: 'span4', ->
     h1 @model.get('title')
-    p 'COOL’s current projects include the new headquarters for China Rail in Shanghai, the new CBTG building in NYC;'
+    p @model.get('description')
   div class: 'span9 offset1 items_preview'
 
 hr()

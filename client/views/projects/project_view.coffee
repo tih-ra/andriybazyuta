@@ -8,21 +8,25 @@ class Views.Projects.Project extends Backbone.View
 
   initialize: ->
     @model.bind 'destroy', @remove, @
+    @model.bind 'change', @onChange, @
   
   addEditPanel: ->
     view = new Views.Projects.Edit(model: @model)
-    console.log @model
     $(@el).append view.render().el
   
   addItemsPreview: ->
     view = new Views.Items.Preview(collection: @model.items)
     @$('.items_preview').html view.render().el
 
+  onChange: ->
+    @render()
+    @model.trigger('edit:modal', true)
+	
   remove: ->
     $(@el).remove()
 
   render: ->
-    $(@el).html @template.render(model: @model)
+    $(@el).html @template.render(model: @model)	
     @addItemsPreview()
     @addEditPanel()
     @

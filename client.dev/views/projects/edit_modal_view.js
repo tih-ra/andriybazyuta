@@ -22,7 +22,8 @@
     };
     EditModal.prototype.onClose = function() {
       this.model.trigger('edit:modal', false);
-      this.model.unbind('edit:modal');
+      this.model.trigger('attach:uploader', false);
+      this.model.unbind('attach:uploader');
       return $(this.el).remove();
     };
     EditModal.prototype.tabUpload = function() {
@@ -46,6 +47,7 @@
       this.tabEdit();
       this.tabUpload();
       this.model.trigger('edit:modal', true);
+      this.model.trigger('attach:uploader', true);
       return this;
     };
     return EditModal;
@@ -58,8 +60,27 @@
     TabEdit.prototype.template = Templates['projects.tab_edit'];
     TabEdit.prototype.id = 'tab_edit';
     TabEdit.prototype.className = 'active';
+    TabEdit.prototype.events = {
+      'click #save_edited': 'save'
+    };
+    TabEdit.prototype.save = function() {
+      this.model.set(this.updateAttributes());
+      return this.model.save(this.updateAttributes(), {
+        success: __bind(function(model) {
+          return console.log(model);
+        }, this)
+      });
+    };
+    TabEdit.prototype.updateAttributes = function() {
+      return {
+        title: this.$('input[name="title"]').val(),
+        description: this.$('textarea[name="description"]').val()
+      };
+    };
     TabEdit.prototype.render = function() {
-      $(this.el).html(this.template.render());
+      $(this.el).html(this.template.render({
+        model: this.model
+      }));
       return this;
     };
     return TabEdit;
@@ -73,10 +94,9 @@
     TabUpload.prototype.id = 'tab_upload';
     TabUpload.prototype.statuses = ['queued', 'uploading', 'danger', 'info'];
     TabUpload.prototype.initialize = function() {
-      return this.model.bind('edit:modal', this.loading, this);
+      return this.model.bind('attach:uploader', this.loading, this);
     };
     TabUpload.prototype.loading = function(state) {
-      console.log('s');
       if (state) {
         return this.attachUploader("/projects/" + (this.model.get('_id')) + "/items");
       } else {

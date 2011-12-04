@@ -6,9 +6,8 @@ class Views.Projects.Edit extends Backbone.View
   className: 'row'
 
   initialize: ->
-    @model.bind 'edit:modal', (( state ) -> 
-      @$('#add_items').button( if state then 'loading' else 'reset' )), @
-
+    @model.bind 'edit:modal', ((state) -> 
+      @$('#add_items').button( if state then 'loading' else 'reset' ) ), @
 
   events:
     'click #delete_project' : 'delete'
@@ -17,8 +16,6 @@ class Views.Projects.Edit extends Backbone.View
   addItems: ->
     view = new Views.Projects.EditModal(model: @model)
     $(view.render().el).modal('show')
-    
-    
   
   delete: ->
     @model.destroy 

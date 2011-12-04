@@ -24,6 +24,15 @@ exports.destroy = (req, res) ->
     project.remove (err) ->
       res.send 'removed'
 
+exports.update = (req, res) ->
+  Project.findById req.params.id, (err, project) ->
+	
+    project.title = req.body.title
+    project.description = req.body.description
+
+    project.save()
+    res.send(project)
+
 exports.item_post = (req, res) ->
   app.alleup_project.upload req, res, (err, file, res) ->
     if err then res.send(err)

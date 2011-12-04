@@ -10,7 +10,9 @@ class Views.Projects.EditModal extends Backbone.View
     
   onClose: ->
     @model.trigger('edit:modal', false)
-    @model.unbind 'edit:modal'
+    @model.trigger('attach:uploader', false)
+    @model.unbind 'attach:uploader'
+
     $(@el).remove()
     
   tabUpload: ->
@@ -31,6 +33,7 @@ class Views.Projects.EditModal extends Backbone.View
     @tabEdit()
     @tabUpload()
     @model.trigger('edit:modal', true)
+    @model.trigger('attach:uploader', true)
     @
 
 class Views.Projects.TabEdit extends Backbone.View
@@ -38,8 +41,21 @@ class Views.Projects.TabEdit extends Backbone.View
   id: 'tab_edit'
   className: 'active'
 
+  events:
+    'click #save_edited' : 'save'
+
+  save: ->
+    @model.set @updateAttributes()
+    @model.save @updateAttributes(),
+      success: (model) =>
+        console.log(model)
+    
+  updateAttributes: ->
+    title: @$('input[name="title"]').val()
+    description: @$('textarea[name="description"]').val()
+
   render: ->
-    $(@el).html @template.render()
+    $(@el).html @template.render(model: @model)
     @	
 	
 class Views.Projects.TabUpload extends Backbone.View
@@ -49,10 +65,9 @@ class Views.Projects.TabUpload extends Backbone.View
   statuses: ['queued', 'uploading', 'danger', 'info'] 
 
   initialize: ->
-    @model.bind 'edit:modal', @loading, @
+    @model.bind 'attach:uploader', @loading, @
 
   loading: (state) ->
-    console.log('s')
     if state then @attachUploader("/projects/#{@model.get('_id')}/items") else @removeUploader()  
 
   attachUploader: (path) ->

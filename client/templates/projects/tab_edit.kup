@@ -1,3 +1,14 @@
-div 'Edit Here'
+div ->
+  form class: 'form-stacked', ->
+    fieldset ->
+      div class: 'clearfix', ->
+        label 'Title'
+        div class: 'input', ->
+          input type: 'text', name: 'title', value: @model.get('title'), class: 'span8'
+      div class: 'clearfix', ->
+        label 'Description'
+        div class: 'input', ->
+          textarea name: 'description', rows: 5, class: 'span8', -> @model.get('description')
+        
 div class: 'modal-footer', ->
-  button class: 'btn primary', -> 'Save'
+  button class: 'btn primary', id: 'save_edited', -> 'Save'

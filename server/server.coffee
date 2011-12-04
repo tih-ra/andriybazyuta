@@ -30,6 +30,7 @@ projects = require('controllers/projects.js')
 app.post('/projects', projects.post)
 app.get('/projects', projects.list)
 app.del('/projects/:id', projects.destroy)
+app.post('/projects/:id', projects.update)
 app.post('/projects/:id/items', projects.item_post)
 
 app.get '/projects/item/:version/:file', (req, res) ->

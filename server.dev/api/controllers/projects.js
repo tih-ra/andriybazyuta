@@ -33,6 +33,14 @@
       });
     });
   };
+  exports.update = function(req, res) {
+    return Project.findById(req.params.id, function(err, project) {
+      project.title = req.body.title;
+      project.description = req.body.description;
+      project.save();
+      return res.send(project);
+    });
+  };
   exports.item_post = function(req, res) {
     return app.alleup_project.upload(req, res, function(err, file, res) {
       if (err) {

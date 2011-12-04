@@ -18,14 +18,14 @@
     Project.prototype.template = Templates['projects.project'];
     Project.prototype.className = 'project';
     Project.prototype.initialize = function() {
-      return this.model.bind('destroy', this.remove, this);
+      this.model.bind('destroy', this.remove, this);
+      return this.model.bind('change', this.onChange, this);
     };
     Project.prototype.addEditPanel = function() {
       var view;
       view = new Views.Projects.Edit({
         model: this.model
       });
-      console.log(this.model);
       return $(this.el).append(view.render().el);
     };
     Project.prototype.addItemsPreview = function() {
@@ -34,6 +34,10 @@
         collection: this.model.items
       });
       return this.$('.items_preview').html(view.render().el);
+    };
+    Project.prototype.onChange = function() {
+      this.render();
+      return this.model.trigger('edit:modal', true);
     };
     Project.prototype.remove = function() {
       return $(this.el).remove();
