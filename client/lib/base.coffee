@@ -63,5 +63,9 @@ window.Base = {}
           )
       ).attr "src", $img.attr("src")
 
+  styleTitle: (title) ->
+    title_arr = title.split(' ')
+    _.flatten( [_(title_arr).initial(), "<span class='dark'>#{_(title_arr).last(1)}</span>"]).join("")
+
 
   
