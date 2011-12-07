@@ -1,6 +1,0 @@
-div class: 'modal-header', ->
-  a href: '#', class: 'close', -> 'x'
-  h3 'Add Files'
-div class: 'modal-body'
-div class: 'modal-footer', ->
-  button class: 'btn primary', id: 'upload_item_file', -> 'Upload Items'
