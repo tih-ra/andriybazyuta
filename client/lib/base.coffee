@@ -39,4 +39,29 @@ window.Base = {}
 
     return uploader
 
+  montage: (object) ->
+    $container = $(object)
+    $imgs = $container.find("img").hide()
+    totalImgs = $imgs.length
+    cnt = 0
+
+    $imgs.each (i) ->
+      $img = $(@)
+      $("<img/>").load(->
+        ++cnt
+        if cnt is totalImgs
+          $imgs.show()
+          $container.montage(
+            liquid 	: false
+            margin : 2
+            minw : 100
+            alternateHeight : true
+            alternateHeightRange:
+              min : 100
+              max : 200
+            fillLastRow : true
+          )
+      ).attr "src", $img.attr("src")
+
+
   

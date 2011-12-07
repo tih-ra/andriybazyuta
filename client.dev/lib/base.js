@@ -33,6 +33,34 @@
         return object.addItem(response.response);
       }, this));
       return uploader;
+    },
+    montage: function(object) {
+      var $container, $imgs, cnt, totalImgs;
+      $container = $(object);
+      $imgs = $container.find("img").hide();
+      totalImgs = $imgs.length;
+      cnt = 0;
+      return $imgs.each(function(i) {
+        var $img;
+        $img = $(this);
+        return $("<img/>").load(function() {
+          ++cnt;
+          if (cnt === totalImgs) {
+            $imgs.show();
+            return $container.montage({
+              liquid: false,
+              margin: 2,
+              minw: 100,
+              alternateHeight: true,
+              alternateHeightRange: {
+                min: 100,
+                max: 200
+              },
+              fillLastRow: true
+            });
+          }
+        }).attr("src", $img.attr("src"));
+      });
     }
   };
 }).call(this);

@@ -9,6 +9,8 @@
 ,       { "url": "lib/bootstrap/bootstrap-tabs.js" }
 ,       { "url": "lib/plupload/plupload.js" }
 ,       { "url": "lib/plupload/plupload.html5.js" }
+,       { "url": "lib/jquery.montage.min.js" }
+
 
 ,       { "url": "lib/kassit.coffee"}
 ,       { "url": "lib/base.coffee"}
@@ -30,7 +32,6 @@
 ,       { "url": "templates/projects/edit_modal.kup" }
 ,       { "url": "templates/projects/tab_upload.kup" }
 ,       { "url": "templates/projects/tab_edit.kup" }
-,       { "url": "templates/items/project_preview.kup" }
 ,       { "url": "templates/shared/progress.kup" }
 
 ,       { "url": "views/root_view.coffee" }

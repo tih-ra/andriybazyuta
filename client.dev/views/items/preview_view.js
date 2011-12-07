@@ -15,28 +15,25 @@
     function Preview() {
       Preview.__super__.constructor.apply(this, arguments);
     }
-    Preview.prototype.className = 'project_images';
+    Preview.prototype.className = 'images_wrapper am-container';
     Preview.prototype.initialize = function() {
-      _.bindAll(this, 'addOne', 'addBigOne', 'addAll');
-      return this.collection.bind('add', this.addAll, this);
+      return _.bindAll(this, 'addOne', 'addAll');
     };
     Preview.prototype.addAll = function() {
-      $(this.el).html('');
-      _(_.last(this.collection.models, 4)).each(this.addOne);
-      return _(_.first(this.collection.models, 1)).each(this.addBigOne);
+      return _(_.last(this.collection.models, 8)).each(this.addOne);
     };
     Preview.prototype.addOne = function(item) {
-      console.log(item);
-      return $(this.el).append("<img src='" + (item.file_url('mini')) + "'/>");
-    };
-    Preview.prototype.addBigOne = function(item) {
-      console.log(item);
-      return $(this.el).attr({
-        "style": "background-image: url('" + (item.file_url('banner')) + "')"
-      });
+      var img;
+      img = this.make('a', {
+        href: '#'
+      }, this.make('img', {
+        src: item.file_url('small')
+      }));
+      return $(this.el).append(img);
     };
     Preview.prototype.render = function() {
       this.addAll();
+      Base.Tools.montage(this.el);
       return this;
     };
     return Preview;

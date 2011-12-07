@@ -19,7 +19,8 @@
     Project.prototype.className = 'project';
     Project.prototype.initialize = function() {
       this.model.bind('destroy', this.remove, this);
-      return this.model.bind('change', this.onChange, this);
+      this.model.bind('change', this.onChange, this);
+      return this.model.items.bind('add', this.addItemsPreview, this);
     };
     Project.prototype.addEditPanel = function() {
       var view;
