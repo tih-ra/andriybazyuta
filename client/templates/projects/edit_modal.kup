@@ -1,6 +1,6 @@
 div class: 'modal-header', ->
   a href: '#', class: 'close', -> 'x'
-  h3 'Add Files'
+  h3 "Edit #{@model.get('title')}"
 div class: 'modal-body', ->
   ul class: 'tabs', ->
     li class: 'active', -> a href: '#tab_edit', -> 'Edit'

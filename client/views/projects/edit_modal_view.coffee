@@ -24,7 +24,7 @@ class Views.Projects.EditModal extends Backbone.View
     @$('.pill-content').append(view.render().el)
 	
   render: ->
-    $(@el).html @template.render()
+    $(@el).html @template.render(model: @model)
 
     $(document.body).append @el
 
