@@ -41,7 +41,9 @@
       return this.$('.pill-content').append(view.render().el);
     };
     EditModal.prototype.render = function() {
-      $(this.el).html(this.template.render());
+      $(this.el).html(this.template.render({
+        model: this.model
+      }));
       $(document.body).append(this.el);
       this.$('.tabs').tabs();
       this.tabEdit();

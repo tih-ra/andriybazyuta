@@ -61,6 +61,11 @@
           }
         }).attr("src", $img.attr("src"));
       });
+    },
+    styleTitle: function(title) {
+      var title_arr;
+      title_arr = title.split(' ');
+      return _.flatten([_(title_arr).initial(), "<span class='dark'>" + (_(title_arr).last(1)) + "</span>"]).join("");
     }
   };
 }).call(this);
