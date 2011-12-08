@@ -15,7 +15,10 @@ class Views.Projects.Edit extends Backbone.View
 
   addItems: ->
     view = new Views.Projects.EditModal(model: @model)
-    $(view.render().el).modal('show')
+    $(view.render().el).modal(
+      backdrop: true
+      show: true
+    )
   
   delete: ->
     @model.destroy 

@@ -10,6 +10,8 @@
 ,       { "url": "lib/plupload/plupload.js" }
 ,       { "url": "lib/plupload/plupload.html5.js" }
 ,       { "url": "lib/jquery.montage.min.js" }
+,       { "url": "lib/froogaloop2.min.js" }
+
 
 
 ,       { "url": "lib/kassit.coffee"}

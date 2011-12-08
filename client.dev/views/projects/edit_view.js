@@ -31,7 +31,10 @@
       view = new Views.Projects.EditModal({
         model: this.model
       });
-      return $(view.render().el).modal('show');
+      return $(view.render().el).modal({
+        backdrop: true,
+        show: true
+      });
     };
     Edit.prototype["delete"] = function() {
       this.model.destroy({

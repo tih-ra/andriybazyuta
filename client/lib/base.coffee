@@ -52,7 +52,7 @@ window.Base = {}
         if cnt is totalImgs
           $imgs.show()
           $container.montage(
-            liquid 	: false
+            liquid 	: true
             margin : 2
             minw : 100
             alternateHeight : true

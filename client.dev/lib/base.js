@@ -48,7 +48,7 @@
           if (cnt === totalImgs) {
             $imgs.show();
             return $container.montage({
-              liquid: false,
+              liquid: true,
               margin: 2,
               minw: 100,
               alternateHeight: true,

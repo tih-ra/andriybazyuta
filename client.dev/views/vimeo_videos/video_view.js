@@ -15,17 +15,23 @@
     function Video() {
       Video.__super__.constructor.apply(this, arguments);
     }
-    Video.prototype.template = Templates['video_videos.video'];
-    Video.prototype.className = 'video_video';
+    Video.prototype.className = 'vimeo_video';
+    Video.prototype.ready = function(player) {
+      return $f(player).api('setColor', 'c0c0c0');
+    };
     Video.prototype.render = function() {
-      var video;
+      var video, _this;
       video = this.make('iframe', {
+        id: "player_" + (this.model.get('id')),
         src: "http://player.vimeo.com/video/" + (this.model.get('id')) + "?api=1&player_id=player_" + (this.model.get('id')),
         width: 530,
         height: 300,
         frameborder: 0
       });
-      $(this.el).html(video);
+      _this = this;
+      $(this.el).hide().html(video).slideDown('slow', function() {
+        return $f(video).addEvent('ready', _this.ready);
+      });
       return this;
     };
     return Video;

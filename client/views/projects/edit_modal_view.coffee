@@ -4,9 +4,6 @@ Templates = Andriybazyuta.Templates
 class Views.Projects.EditModal extends Backbone.View
   template: Templates['projects.edit_modal']
   className: 'modal hide fade'
-
-  events:
-    'click .close' : 'onClose'
     
   onClose: ->
     @model.trigger('edit:modal', false)
@@ -30,7 +27,10 @@ class Views.Projects.EditModal extends Backbone.View
 	
   render: ->
     $(@el).html @template.render(model: @model)
-
+    
+    _this = @
+    $(@el).bind 'hidden', -> _this.onClose()
+    
     $(document.body).append @el
 
     @$('.tabs').tabs()
