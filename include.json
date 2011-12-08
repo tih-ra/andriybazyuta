@@ -19,9 +19,11 @@
 
 ,       { "url": "models/project.coffee" }
 ,       { "url": "models/item.coffee" }
+,       { "url": "models/vimeo_video.coffee" }
 
 ,       { "url": "collections/projects.coffee" }
 ,       { "url": "collections/items.coffee" }
+,       { "url": "collections/vimeo_videos.coffee" }
 
 
 ,       { "url": "templates/root/layout.kup" }
@@ -40,6 +42,9 @@
 ,       { "url": "views/projects/edit_view.coffee" }
 ,       { "url": "views/projects/new_view.coffee" }
 ,       { "url": "views/projects/edit_modal_view.coffee" }
+
+,       { "url": "views/vimeo_videos/index_view.coffee" }
+,       { "url": "views/vimeo_videos/video_view.coffee" }
 
 ,       { "url": "views/items/preview_view.coffee" }
 ,       { "url": "views/shared/progress_view.coffee" }

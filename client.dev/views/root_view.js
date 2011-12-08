@@ -1,5 +1,5 @@
 (function() {
-  var Items, Projects, Root, Shared, Templates, Views;
+  var Items, Projects, Root, Shared, Templates, Views, VimeoVideos;
   var __hasProp = Object.prototype.hasOwnProperty, __extends = function(child, parent) {
     for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; }
     function ctor() { this.constructor = child; }
@@ -12,6 +12,7 @@
   Projects = Andriybazyuta.Views.Projects = {};
   Shared = Andriybazyuta.Views.Shared = {};
   Items = Andriybazyuta.Views.Items = {};
+  VimeoVideos = Andriybazyuta.Views.VimeoVideos = {};
   Views = Andriybazyuta.Views;
   Templates = Andriybazyuta.Templates;
   Root.Layout = (function() {

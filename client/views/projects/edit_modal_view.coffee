@@ -22,6 +22,11 @@ class Views.Projects.EditModal extends Backbone.View
   tabEdit: ->
     view = new Views.Projects.TabEdit(model: @model)
     @$('.pill-content').append(view.render().el)
+
+  tabVimeo: ->
+    view = new Views.Projects.TabVimeo(model: @model)
+    @$('.pill-content').append(view.render().el)
+	
 	
   render: ->
     $(@el).html @template.render(model: @model)
@@ -32,6 +37,8 @@ class Views.Projects.EditModal extends Backbone.View
     
     @tabEdit()
     @tabUpload()
+    @tabVimeo()
+
     @model.trigger('edit:modal', true)
     @model.trigger('attach:uploader', true)
     @
@@ -102,3 +109,12 @@ class Views.Projects.TabUpload extends Backbone.View
     model = new Andriybazyuta.Models.Item
     model.set({file: file})
     @model.items.add(model)
+
+class Views.Projects.TabVimeo extends Backbone.View
+  id: 'tab_vimeo'
+
+  render: ->
+    view = new Views.VimeoVideos.Index
+    $(@el).html view.render().el
+    @
+

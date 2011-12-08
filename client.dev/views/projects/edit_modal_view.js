@@ -17,9 +17,6 @@
     }
     EditModal.prototype.template = Templates['projects.edit_modal'];
     EditModal.prototype.className = 'modal hide fade';
-    EditModal.prototype.events = {
-      'click .close': 'onClose'
-    };
     EditModal.prototype.onClose = function() {
       this.model.trigger('edit:modal', false);
       this.model.trigger('attach:uploader', false);
@@ -40,14 +37,27 @@
       });
       return this.$('.pill-content').append(view.render().el);
     };
+    EditModal.prototype.tabVimeo = function() {
+      var view;
+      view = new Views.Projects.TabVimeo({
+        model: this.model
+      });
+      return this.$('.pill-content').append(view.render().el);
+    };
     EditModal.prototype.render = function() {
+      var _this;
       $(this.el).html(this.template.render({
         model: this.model
       }));
+      _this = this;
+      $(this.el).bind('hidden', function() {
+        return _this.onClose();
+      });
       $(document.body).append(this.el);
       this.$('.tabs').tabs();
       this.tabEdit();
       this.tabUpload();
+      this.tabVimeo();
       this.model.trigger('edit:modal', true);
       this.model.trigger('attach:uploader', true);
       return this;
@@ -145,5 +155,19 @@
       return this.model.items.add(model);
     };
     return TabUpload;
+  })();
+  Views.Projects.TabVimeo = (function() {
+    __extends(TabVimeo, Backbone.View);
+    function TabVimeo() {
+      TabVimeo.__super__.constructor.apply(this, arguments);
+    }
+    TabVimeo.prototype.id = 'tab_vimeo';
+    TabVimeo.prototype.render = function() {
+      var view;
+      view = new Views.VimeoVideos.Index;
+      $(this.el).html(view.render().el);
+      return this;
+    };
+    return TabVimeo;
   })();
 }).call(this);

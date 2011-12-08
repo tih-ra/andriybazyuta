@@ -10,7 +10,8 @@
 ,   "dependencies": {
         "kassit":">=0.1.5"
 ,	   "mongoose": "" 
-,	   "alleup": "0.0.5"   
+,	   "alleup": "0.0.5" 
+,      "vimeo-client": ""  
     }
 ,   "devDependencies": {}
 ,   "engines": {

@@ -1,11 +1,12 @@
 (function() {
-  var Andriybazyuta, alleup, app, express, mongoose, projects;
+  var Andriybazyuta, alleup, app, express, mongoose, projects, vimeo;
   express = require('kassit/node_modules/express');
   mongoose = require('mongoose');
   alleup = require('alleup');
+  vimeo = require('vimeo-client');
   app = Andriybazyuta = process['Andriybazyuta'] = express.createServer();
   app.mode = !(typeof getMode === "function" ? getMode() : void 0) ? 'prod' : getMode();
-  app.port = 3000;
+  app.port = 3002;
   if (app.mode !== 'prod') {
     app.use(express.logger({
       format: "\u001b[1m :date \u001b[1m:method\u001b[0m \u001b[33m:url\u001b[0m :response-time ms\u001b[0m :status"
@@ -16,6 +17,15 @@
   app.use(express.cookieParser());
   app.use(express.session({
     secret: '535875805420801'
+  }));
+  app.use(vimeo.middleware({
+    consumerKey: "a3a8e7615f737162c5efb58b4bb26f8c",
+    consumerSecret: "50cde6c5783b4f9c",
+    baseURL: "http://localhost:3002",
+    logging: "debug",
+    afterLogin: "/",
+    afterLogout: "/",
+    permission: "read"
   }));
   app.alleup_project = new alleup({
     storage: 'dir',
@@ -42,6 +52,14 @@
   app.post('/projects/:id/items', projects.item_post);
   app.get('/projects/item/:version/:file', function(req, res) {
     return res.redirect(app.alleup_project.url(req.params['file'], req.params['version']));
+  });
+  app.get('/vimeo/video', function(req, res) {
+    console.log(req.session);
+    return vimeo.get({
+      method: "vimeo.videos.getAll"
+    }, req, function(err, data, response) {
+      return res.send(err ? err : JSON.parse(data).videos.video);
+    });
   });
   if (app.mode === 'dev') {
     app.get('/client.dev/*', function(req, res) {
