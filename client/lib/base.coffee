@@ -67,5 +67,22 @@ window.Base = {}
     title_arr = title.split(' ')
     _.flatten( [_(title_arr).initial(), "<span class='dark'>#{_(title_arr).last(1)}</span>"]).join("")
 
+  accordion: (button, content) ->
+    $(button).click ->
+      $(button).removeClass "on"
+      $(content).slideUp "normal"
+      if $(this).next().is(":hidden") is true
+        $(this).addClass "on"
+        $(this).next().slideDown "normal"
+
+    $(button).mouseover(->
+      $(this).addClass "over"
+    ).mouseout ->
+      $(this).removeClass "over"
+
+    $(content).hide()
+
+
+
 
   

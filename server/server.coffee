@@ -47,7 +47,6 @@ app.get '/projects/item/:version/:file', (req, res) ->
   res.redirect(app.alleup_project.url(req.params['file'], req.params['version']))
 
 app.get '/vimeo/video', (req, res) ->
-  console.log(req.session)
   vimeo.get
     method: "vimeo.videos.getAll"
   , req, (err, data, response) ->

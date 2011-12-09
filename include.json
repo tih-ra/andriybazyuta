@@ -37,6 +37,7 @@
 ,       { "url": "templates/projects/tab_upload.kup" }
 ,       { "url": "templates/projects/tab_edit.kup" }
 ,       { "url": "templates/shared/progress.kup" }
+,       { "url": "templates/vimeo_videos/video.kup" }
 
 ,       { "url": "views/root_view.coffee" }
 ,       { "url": "views/projects/index_view.coffee" }
@@ -55,6 +56,8 @@
 
 ,       { "url": "style/tools/bootstrap.custom.css" }
 ,       { "url": "style/master.less" }
+,       { "url": "style/manager.less" }
+
 
     ]
 ,   "server": [

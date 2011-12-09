@@ -31,6 +31,7 @@ class Views.Projects.EditModal extends Backbone.View
     _this = @
     $(@el).bind 'hidden', -> _this.onClose()
     
+    #NEED FOR UPLOADER
     $(document.body).append @el
 
     @$('.tabs').tabs()
