@@ -1,1 +1,0 @@
-(function(){Andriybazyuta.Templates['items.project_preview'] = new Kassit.Template.KUP("function(){img({src:\"static/images/projects_mini1.jpg\"}),img({src:\"static/images/projects_mini2.jpg\"}),img({src:\"static/images/projects_mini2.jpg\"}),img({src:\"static/images/projects_mini1.jpg\"})}")}).call(this)

@@ -1,1 +1,0 @@
-(function(){Andriybazyuta.Templates['projects.tab_upload'] = new Kassit.Template.KUP("function(){div({\"class\":\"upload\"}),div({\"class\":\"modal-footer\"},function(){return button({\"class\":\"btn primary\",id:\"upload_item_file\"},function(){return\"Upload Items\"})})}")}).call(this)

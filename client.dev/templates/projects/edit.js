@@ -1,1 +1,0 @@
-(function(){Andriybazyuta.Templates['projects.edit'] = new Kassit.Template.KUP("function(){div({\"class\":\"grid14\"},function(){return div({\"class\":\"well\"},function(){button({\"class\":\"btn info\",id:\"add_items\"},function(){return\"Edit Project\"});return button({\"class\":\"btn danger\",id:\"delete_project\"},function(){return\"Delete\"})})})}")}).call(this)

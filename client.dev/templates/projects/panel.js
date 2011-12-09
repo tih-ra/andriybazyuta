@@ -1,1 +1,0 @@
-(function(){Andriybazyuta.Templates['projects.panel'] = new Kassit.Template.KUP("function(){div({\"class\":\"grid14\"},function(){return div({\"class\":\"well\"},function(){return button({\"class\":\"btn info\",id:\"new_project\"},function(){return\"Add Project\"})})})}")}).call(this)
