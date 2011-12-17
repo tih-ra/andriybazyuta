@@ -1,5 +1,6 @@
 app = Andriybazyuta = process['Andriybazyuta']
 Project = require('models/project.js')
+u = require('underscore')
 
 exports.post = (req, res) ->
   project = new Project(
@@ -42,3 +43,16 @@ exports.item_post = (req, res) ->
       project.save()
       res.write(file)
       res.end()
+
+exports.video_post = (req, res) ->
+  Project.findById req.params.id, (err, project) ->
+
+    video = u.filter project.videos, (v) -> parseInt(v.vimeo_id) is parseInt(req.body.vimeo_id)
+     
+    if video.length
+      project.videos[u.indexOf(project.videos, video[0])].remove() 
+    else 
+      project.videos.push({vimeo_id: req.body.vimeo_id})
+
+    project.save()
+    res.end()

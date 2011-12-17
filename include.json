@@ -22,10 +22,12 @@
 ,       { "url": "models/project.coffee" }
 ,       { "url": "models/item.coffee" }
 ,       { "url": "models/vimeo_video.coffee" }
+,       { "url": "models/video.coffee" }
 
 ,       { "url": "collections/projects.coffee" }
 ,       { "url": "collections/items.coffee" }
 ,       { "url": "collections/vimeo_videos.coffee" }
+,       { "url": "collections/videos.coffee" }
 
 
 ,       { "url": "templates/root/layout.kup" }
@@ -65,6 +67,7 @@
 ,		{ "url": "api/controllers/projects.coffee" }
 ,		{ "url": "api/models/project.coffee" }
 ,       { "url": "api/models/items.coffee" }
+,       { "url": "api/models/videos.coffee" }
 
     ]
 }

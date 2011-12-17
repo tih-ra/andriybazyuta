@@ -10,6 +10,7 @@ class Views.Projects.Project extends Backbone.View
     @model.bind 'destroy', @remove, @
     @model.bind 'change', @onChange, @
     @model.items.bind 'add', @addItemsPreview, @
+    console.log(@model)
   
   addEditPanel: ->
     view = new Views.Projects.Edit(model: @model)

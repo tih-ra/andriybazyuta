@@ -1,5 +1,5 @@
 div class: 'accordionButton', ->
-  input type: 'checkbox' 
+  input type: 'checkbox', class: 'attach' 
   span class: 'label success', -> @model.get('title')
    
 div class: 'accordionContent', ->

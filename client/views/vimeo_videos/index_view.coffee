@@ -17,7 +17,7 @@ class Views.VimeoVideos.Index extends Backbone.View
     @collection.each(@addOne)
 
   addOne: (vimeo_video)->
-    view = new Views.VimeoVideos.Video(model: vimeo_video)
+    view = new Views.VimeoVideos.Video({model: vimeo_video, parent: @model})
     $(@el).append( view.render().el )
 
   render: ->

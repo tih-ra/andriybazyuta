@@ -113,9 +113,32 @@ class Views.Projects.TabUpload extends Backbone.View
 
 class Views.Projects.TabVimeo extends Backbone.View
   id: 'tab_vimeo'
+  
+  initialize: ->
+    @model.bind 'video:attach', @attach, @
+    @model.bind 'video:unattach', @unattach, @
+
+  attach: (vimeo_id)->
+    console.log('attach')
+    model = new Andriybazyuta.Models.Video
+    model.collection = @model.videos
+     
+    model.save {vimeo_id: vimeo_id},
+      success: (model, response) =>
+        @model.videos.add(model)
+
+  unattach: (vimeo_id)->
+    console.log('unattach')
+    model = _.find @model.videos.models, (video) -> video.attributes.vimeo_id.toString() is vimeo_id
+    
+    model.save {vimeo_id: vimeo_id},
+      success: (model, response) =>
+        @model.videos.remove(model)
+ 
+            
 
   render: ->
-    view = new Views.VimeoVideos.Index
+    view = new Views.VimeoVideos.Index(model: @model)
     $(@el).html view.render().el
     @
 
