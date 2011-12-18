@@ -13,7 +13,8 @@ class Views.Projects.Gallery extends Backbone.View
     @$('.items_gallery').html view.render().el
 
   close: ->
-    $(@el).remove()
+    $(@el).slideUp 'slow', ->
+      $(@).remove()
 
   render: ->
     

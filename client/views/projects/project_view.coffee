@@ -21,7 +21,7 @@ class Views.Projects.Project extends Backbone.View
 
   showGallery: ->
     view = new Views.Projects.Gallery(model: @model)
-    $(document.body).append view.render().el
+    $(view.render().el).hide().appendTo(document.body).slideDown('slow')
   
   addItemsPreview: ->
     view = new Views.Items.Preview(collection: @model.items)
