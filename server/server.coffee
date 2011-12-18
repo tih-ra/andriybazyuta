@@ -43,6 +43,8 @@ app.del('/projects/:id', projects.destroy)
 app.post('/projects/:id', projects.update)
 app.post('/projects/:id/items', projects.item_post)
 app.post('/projects/:id/videos', projects.video_post)
+app.post('/projects/:id/embeds', projects.embed_post)
+app.del('/projects/:id/embeds/:embed_id', projects.embed_destroy)
 
 app.get '/projects/item/:version/:file', (req, res) ->
   res.redirect(app.alleup_project.url(req.params['file'], req.params['version']))

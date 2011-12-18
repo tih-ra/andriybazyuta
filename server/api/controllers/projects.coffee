@@ -12,7 +12,7 @@ exports.post = (req, res) ->
   res.send(project)
 
 exports.list = (req, res) ->
-  Project.find (err, projects) ->
+  Project.find({}).sort('createdAt', 1).execFind (err, projects) ->
     res.send projects
 
 exports.destroy = (req, res) ->
@@ -42,6 +42,7 @@ exports.item_post = (req, res) ->
       project.items.push({file: file})
       project.save()
       res.write(file)
+
       res.end()
 
 exports.video_post = (req, res) ->
@@ -55,4 +56,19 @@ exports.video_post = (req, res) ->
       project.videos.push({vimeo_id: req.body.vimeo_id})
 
     project.save()
+
+    res.end()
+
+exports.embed_post = (req, res) ->
+  Project.findById req.params.id, (err, project) ->
+    project.embeds.push({src: req.body.src})
+    project.save()
+
+    res.end()
+
+exports.embed_destroy = (req, res) ->
+  Project.findById req.params.id, (err, project) ->
+    project.embeds.id(req.params.embed_id).remove()
+    project.save()
+
     res.end()

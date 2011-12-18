@@ -2,7 +2,7 @@ Templates = Andriybazyuta.Templates
 Views = Andriybazyuta.Views
 
 class Views.Projects.Index extends Backbone.View
-  id: 'projects'
+  template: Templates['projects.index']
 
   initialize: ->
     @collection = new Andriybazyuta.Collections.Projects
@@ -17,12 +17,13 @@ class Views.Projects.Index extends Backbone.View
 
   addOne: (project)->
     view = new Views.Projects.Project(model: project)
-    $(@el).append( view.render().el )
+    @$('#projects').prepend( view.render().el )
 
   addPanel: ->
     view = new Views.Projects.New(collection: @collection)
-    $(@el).prepend view.render().el
+    @$('#panel').html view.render().el
 
   render: ->
+    $(@el).html @template.render()
     @addPanel()
     @

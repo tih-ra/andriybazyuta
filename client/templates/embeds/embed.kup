@@ -1,0 +1,4 @@
+a ->
+  div class: 'media_standart', ->
+    iframe width: 236, height: 190, src: @model.get('src'), frameborder: 0, ->
+    button class: 'btn delete_embed', 'DELETE'

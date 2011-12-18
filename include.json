@@ -23,23 +23,28 @@
 ,       { "url": "models/item.coffee" }
 ,       { "url": "models/vimeo_video.coffee" }
 ,       { "url": "models/video.coffee" }
+,       { "url": "models/embed.coffee" }
 
 ,       { "url": "collections/projects.coffee" }
 ,       { "url": "collections/items.coffee" }
 ,       { "url": "collections/vimeo_videos.coffee" }
 ,       { "url": "collections/videos.coffee" }
+,       { "url": "collections/embeds.coffee" }
 
 
 ,       { "url": "templates/root/layout.kup" }
 ,       { "url": "templates/root/index.kup" }
+,       { "url": "templates/projects/index.kup" }
 ,       { "url": "templates/projects/project.kup" }
 ,       { "url": "templates/projects/new.kup" }
 ,       { "url": "templates/projects/edit.kup" }
 ,       { "url": "templates/projects/edit_modal.kup" }
 ,       { "url": "templates/projects/tab_upload.kup" }
 ,       { "url": "templates/projects/tab_edit.kup" }
+,       { "url": "templates/projects/tab_embed.kup" }
 ,       { "url": "templates/shared/progress.kup" }
 ,       { "url": "templates/vimeo_videos/video.kup" }
+,       { "url": "templates/embeds/embed.kup" }
 
 ,       { "url": "views/root_view.coffee" }
 ,       { "url": "views/projects/index_view.coffee" }
@@ -50,6 +55,9 @@
 
 ,       { "url": "views/vimeo_videos/index_view.coffee" }
 ,       { "url": "views/vimeo_videos/video_view.coffee" }
+
+,       { "url": "views/embeds/index_view.coffee" }
+,       { "url": "views/embeds/embed_view.coffee" }
 
 ,       { "url": "views/items/preview_view.coffee" }
 ,       { "url": "views/shared/progress_view.coffee" }
@@ -68,6 +76,7 @@
 ,		{ "url": "api/models/project.coffee" }
 ,       { "url": "api/models/items.coffee" }
 ,       { "url": "api/models/videos.coffee" }
+,       { "url": "api/models/embeds.coffee" }
 
     ]
 }

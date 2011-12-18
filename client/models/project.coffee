@@ -9,6 +9,8 @@ class Andriybazyuta.Models.Project extends Backbone.Model
   initialize: ->
     @items = new Andriybazyuta.Collections.Items(@get('items'), {url: '/projects'})
     @videos = new Andriybazyuta.Collections.Videos(@get('videos'), {url: "/projects/#{@get('_id')}/videos"})
+    @embeds = new Andriybazyuta.Collections.Embeds(@get('embeds'), {url: "/projects/#{@get('_id')}/embeds"})
+
 	
   url: -> if @get('_id') then "/projects/#{@get('_id')}" else "/projects"
 

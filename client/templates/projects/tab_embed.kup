@@ -1,0 +1,12 @@
+div class: 'well', ->
+  form class: 'form-stacked', ->
+    fieldset ->
+      div class: 'clearfix', ->
+        label 'Embed'
+        div class: 'input', ->
+          input type: 'text', name: 'embed', class: 'span8', ->
+
+div class: 'embeds', ->
+	
+div class: 'modal-footer', ->
+  button class: 'btn primary', id: 'save_embed', -> 'Add Embed'

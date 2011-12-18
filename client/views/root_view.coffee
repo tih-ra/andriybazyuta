@@ -3,6 +3,7 @@ Projects = Andriybazyuta.Views.Projects = {}
 Shared = Andriybazyuta.Views.Shared = {}
 Items = Andriybazyuta.Views.Items = {}
 VimeoVideos = Andriybazyuta.Views.VimeoVideos = {}
+Embeds = Andriybazyuta.Views.Embeds = {}
 
 
 Views = Andriybazyuta.Views

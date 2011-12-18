@@ -23,6 +23,10 @@ class Views.Projects.EditModal extends Backbone.View
   tabVimeo: ->
     view = new Views.Projects.TabVimeo(model: @model)
     @$('.pill-content').append(view.render().el)
+
+  tabEmbed: ->
+    view = new Views.Projects.TabEmbed(model: @model)
+    @$('.pill-content').append(view.render().el)
 	
 	
   render: ->
@@ -39,6 +43,7 @@ class Views.Projects.EditModal extends Backbone.View
     @tabEdit()
     @tabUpload()
     @tabVimeo()
+    @tabEmbed()
 
     @model.trigger('edit:modal', true)
     @model.trigger('attach:uploader', true)
@@ -134,11 +139,38 @@ class Views.Projects.TabVimeo extends Backbone.View
     model.save {vimeo_id: vimeo_id},
       success: (model, response) =>
         @model.videos.remove(model)
- 
-            
 
   render: ->
     view = new Views.VimeoVideos.Index(model: @model)
     $(@el).html view.render().el
     @
 
+
+class Views.Projects.TabEmbed extends Backbone.View
+  template: Templates['projects.tab_embed']
+  id: 'tab_embed'
+
+  events:
+    'click #save_embed' : 'save'
+
+  save: ->
+    model = new Andriybazyuta.Models.Embed
+    model.collection = @model.embeds
+
+    model.save @embedAttributes(),
+      success: (model, response) =>
+        @model.embeds.add model
+        @$('input[name="embed"]').val('')
+        
+
+  embedAttributes: ->
+    src: @$('input[name="embed"]').val()
+
+  renderEmbeds: ->
+    view = new Views.Embeds.Index(collection: @model.embeds)
+    @$('.embeds').html view.render().el
+	
+  render: ->
+    $(@el).html @template.render(model: @model)
+    @renderEmbeds()
+    @	
