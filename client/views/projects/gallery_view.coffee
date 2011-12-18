@@ -6,7 +6,6 @@ class Views.Projects.Gallery extends Backbone.View
   template: Templates['projects.gallery']
   events:
     'click .x-alt' : 'close'
-#    'click .gallery_videos' : 'addVideosPreview'
 
 
   addItemsPreview: ->
@@ -23,12 +22,18 @@ class Views.Projects.Gallery extends Backbone.View
     $(@el).slideUp 'slow', ->
       $(@).remove()
 
+  includeVideos: ->
+    if @model.videos.models.length || @model.embeds.models.length
+      @addVideosPreview()
+    else
+      @$('.gallery_videos').hide()
+	
   render: ->
     
     $(@el).html @template.render(model: @model)
     
     @addItemsPreview()
-    @addVideosPreview()
+    @includeVideos()
     $(@el).css('width' : "#{$(document).width()}px")
     $(@el).css('height' : "#{$(document).height()}px")
     @
