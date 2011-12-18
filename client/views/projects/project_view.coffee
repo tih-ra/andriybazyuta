@@ -6,6 +6,9 @@ class Views.Projects.Project extends Backbone.View
   template: Templates['projects.project']
   className: 'project'
 
+  events:
+    'click .items_preview' : 'showGallery'
+
   initialize: ->
     @model.bind 'destroy', @remove, @
     @model.bind 'change', @onChange, @
@@ -15,6 +18,10 @@ class Views.Projects.Project extends Backbone.View
   addEditPanel: ->
     view = new Views.Projects.Edit(model: @model)
     $(@el).append view.render().el
+
+  showGallery: ->
+    view = new Views.Projects.Gallery(model: @model)
+    $(document.body).append view.render().el
   
   addItemsPreview: ->
     view = new Views.Items.Preview(collection: @model.items)

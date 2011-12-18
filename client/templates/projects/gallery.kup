@@ -1,0 +1,5 @@
+div class: 'header', ->
+  a class: 'iconic x-alt', '' 
+  h1 Base.Tools.styleTitle(@model.get('title'))
+  p @model.get('description')
+div class: 'items_gallery', ->

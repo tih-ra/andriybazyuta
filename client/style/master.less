@@ -2,6 +2,8 @@
 @middle: #999999;
 @plain: #808080;
 @light: #c0c0c0;
+@black: #000000;
+@white: #ffffff;
 
 @font-face {
     font-family: 'ZeroZeroIsRegular';
@@ -136,4 +138,31 @@ p {
 	  outline:none;	
 	}
 }
-
+#gallery {
+	z-index: 10000;
+	position: absolute;
+	top:0;
+	left:0;
+	background: @white;
+	div.header {
+		position: fixed;
+		z-index: 20000;
+		padding: 30px;
+		top: 70px;
+		width: 500px;
+		height: 200px;
+		background: transparent url(/static/images/design/black.png) repeat top left;
+		span.dark {
+			color: @white;
+		}
+		a.x-alt {
+			color: @plain;
+			float: right;
+			font-size: 22px
+		}
+		a:hover.x-alt {
+			text-decoration: none;
+			color: @white;
+		}
+	}
+}

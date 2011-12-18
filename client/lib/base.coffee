@@ -39,7 +39,7 @@ window.Base = {}
 
     return uploader
 
-  montage: (object) ->
+  montage: (object, options) ->
     $container = $(object)
     $imgs = $container.find("img").hide()
     totalImgs = $imgs.length
@@ -52,16 +52,28 @@ window.Base = {}
         if cnt is totalImgs
           $imgs.show()
           $container.montage(
-            liquid 	: true
-            margin : 2
-            minw : 100
-            alternateHeight : true
-            alternateHeightRange:
-              min : 100
-              max : 200
-            fillLastRow : true
+            options
           )
       ).attr "src", $img.attr("src")
+
+  montagePreview: ->
+    liquid : true
+    margin : 2
+    minw : 100
+    alternateHeight : true
+    alternateHeightRange:
+      min : 100
+      max : 200
+    fillLastRow : true
+
+  montageGallery: ->
+    liquid : false
+    margin: 4
+    minw : 150
+    alternateHeight : true
+    alternateHeightRange:
+      min : 150
+      max : 400
 
   styleTitle: (title) ->
     title_arr = title.split(' ')

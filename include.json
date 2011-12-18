@@ -36,6 +36,7 @@
 ,       { "url": "templates/root/index.kup" }
 ,       { "url": "templates/projects/index.kup" }
 ,       { "url": "templates/projects/project.kup" }
+,       { "url": "templates/projects/gallery.kup" }
 ,       { "url": "templates/projects/new.kup" }
 ,       { "url": "templates/projects/edit.kup" }
 ,       { "url": "templates/projects/edit_modal.kup" }
@@ -49,6 +50,7 @@
 ,       { "url": "views/root_view.coffee" }
 ,       { "url": "views/projects/index_view.coffee" }
 ,       { "url": "views/projects/project_view.coffee" }
+,       { "url": "views/projects/gallery_view.coffee" }
 ,       { "url": "views/projects/edit_view.coffee" }
 ,       { "url": "views/projects/new_view.coffee" }
 ,       { "url": "views/projects/edit_modal_view.coffee" }
@@ -60,11 +62,14 @@
 ,       { "url": "views/embeds/embed_view.coffee" }
 
 ,       { "url": "views/items/preview_view.coffee" }
+,       { "url": "views/items/gallery_view.coffee" }
+
 ,       { "url": "views/shared/progress_view.coffee" }
 
 ,       { "url": "routers/root_router.coffee" }
 
 ,       { "url": "style/tools/bootstrap.custom.css" }
+,       { "url": "style/tools/iconic.css" }
 ,       { "url": "style/master.less" }
 ,       { "url": "style/manager.less" }
 
