@@ -1,0 +1,2 @@
+div ->
+  iframe width: 640, height: 360, src: @model.get('src'), frameborder: 0, ->

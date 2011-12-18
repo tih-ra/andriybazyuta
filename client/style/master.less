@@ -55,7 +55,7 @@ body {
 	}
 }
 
-#menu {
+.menu {
 	list-style: none;
 	margin: 0;
 	font-size: 16px;
@@ -146,7 +146,7 @@ p {
 	background: @white;
 	div.header {
 		position: fixed;
-		z-index: 20000;
+		z-index: 1000;
 		padding: 30px;
 		top: 70px;
 		width: 500px;
@@ -164,5 +164,17 @@ p {
 			text-decoration: none;
 			color: @white;
 		}
+		a {
+			color: @white;
+			cursor: pointer;
+		}
+		a:hover {
+			color: @plain;
+			text-decoration: none;
+		}
+		span {
+			font-family: 'SortsMillGoudyRegular'
+		}
+		
 	}
 }

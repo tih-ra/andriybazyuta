@@ -1,0 +1,2 @@
+div ->
+  iframe width: 640, height: 360,  src: "http://player.vimeo.com/video/#{@model.get('vimeo_id')}", frameborder: 0, ->

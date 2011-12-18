@@ -11,7 +11,8 @@
 ,       { "url": "lib/plupload/plupload.html5.js" }
 ,       { "url": "lib/jquery.montage.min.js" }
 ,       { "url": "lib/froogaloop2.min.js" }
-
+,       { "url": "lib/jquery.mousewheel-3.0.6.pack.js" }
+,       { "url": "lib/jquery.fancybox.pack.js" }
 
 
 ,       { "url": "lib/kassit.coffee"}
@@ -46,6 +47,8 @@
 ,       { "url": "templates/shared/progress.kup" }
 ,       { "url": "templates/vimeo_videos/video.kup" }
 ,       { "url": "templates/embeds/embed.kup" }
+,       { "url": "templates/videos/embed.kup" }
+,       { "url": "templates/videos/vimeo.kup" }
 
 ,       { "url": "views/root_view.coffee" }
 ,       { "url": "views/projects/index_view.coffee" }
@@ -54,6 +57,10 @@
 ,       { "url": "views/projects/edit_view.coffee" }
 ,       { "url": "views/projects/new_view.coffee" }
 ,       { "url": "views/projects/edit_modal_view.coffee" }
+
+,       { "url": "views/videos/index_view.coffee" }
+,       { "url": "views/videos/vimeo_view.coffee" }
+,       { "url": "views/videos/embed_view.coffee" }
 
 ,       { "url": "views/vimeo_videos/index_view.coffee" }
 ,       { "url": "views/vimeo_videos/video_view.coffee" }
@@ -70,6 +77,7 @@
 
 ,       { "url": "style/tools/bootstrap.custom.css" }
 ,       { "url": "style/tools/iconic.css" }
+,       { "url": "style/tools/jquery.fancybox.css" }
 ,       { "url": "style/master.less" }
 ,       { "url": "style/manager.less" }
 

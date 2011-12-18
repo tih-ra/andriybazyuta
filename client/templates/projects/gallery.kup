@@ -2,4 +2,8 @@ div class: 'header', ->
   a class: 'iconic x-alt', '' 
   h1 Base.Tools.styleTitle(@model.get('title'))
   p @model.get('description')
+  p ->
+    ul class: 'menu', ->
+      li ->
+        a class: 'iconic image gallery_videos', -> span 'Video'
 div class: 'items_gallery', ->
