@@ -87,6 +87,7 @@
     ]
 ,   "server": [
         { "url": "server.coffee" }
+,       { "url": "conf/routes.coffee" }
 ,		{ "url": "api/controllers/projects.coffee" }
 ,		{ "url": "api/models/project.coffee" }
 ,       { "url": "api/models/items.coffee" }
