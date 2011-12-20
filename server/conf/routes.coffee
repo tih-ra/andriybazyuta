@@ -1,4 +1,4 @@
-module.exports = (app) -> 
+module.exports = (app, vimeo) -> 
 	
   app.get '/', (req, res) -> res.sendfile('andriybazyuta.html')
   app.get '/andriybazyuta.js', (req, res) -> res.sendfile('andriybazyuta.js')

@@ -33,7 +33,7 @@ app.use vimeo.middleware(
 
 app.alleup_project = new alleup({storage : 'dir', config_file: "./alleup_project.json"});
 
-require('routes.js')(app)
+require('routes.js')(app, vimeo)
         
 console.log "  ::loading: Andriybazyuta is up and serving at http://localhost:#{app.port}"
 app.listen(app.port);
