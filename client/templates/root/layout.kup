@@ -1,15 +1,16 @@
 div class: 'row', ->
   div class: 'span14 offset1', ->
     ul class: 'menu', ->
-      li 'PROJECTS'
-      li 'CODE'
-      li class: 'selected', -> 'PRESS'
+      li -> a href: '#projects', class: 'menu_item', -> 'PROJECTS'
+      li -> a href: '#code', class: 'menu_item', -> 'CODE'
+      li -> a href: '#press', class: 'menu_item', -> 'PRESS'
 
 div class: 'row', ->
   div class: 'span14 offset1', ->
-    span id: 'header', -> 
-      span 'ANDRIY'
-      span class: 'light', -> 'BAZYUTA'
+    a href: '#', class: 'header menu_item', ->
+      span id: 'header', -> 
+        span 'ANDRIY'
+        span class: 'light', -> 'BAZYUTA'
   div class: 'span14 offset1', ->
     hr()
   div class: 'span14 offset1', id: 'root', ->

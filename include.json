@@ -25,12 +25,14 @@
 ,       { "url": "models/vimeo_video.coffee" }
 ,       { "url": "models/video.coffee" }
 ,       { "url": "models/embed.coffee" }
+,       { "url": "models/session.coffee" }
 
 ,       { "url": "collections/projects.coffee" }
 ,       { "url": "collections/items.coffee" }
 ,       { "url": "collections/vimeo_videos.coffee" }
 ,       { "url": "collections/videos.coffee" }
 ,       { "url": "collections/embeds.coffee" }
+,       { "url": "collections/sessions.coffee" }
 
 
 ,       { "url": "templates/root/layout.kup" }
@@ -90,6 +92,7 @@
 ,       { "url": "api/models/items.coffee" }
 ,       { "url": "api/models/videos.coffee" }
 ,       { "url": "api/models/embeds.coffee" }
+,       { "url": "api/helpers/sessions.coffee" }
 
     ]
 }

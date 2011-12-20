@@ -37,5 +37,5 @@ class Views.Projects.Project extends Backbone.View
   render: ->
     $(@el).html @template.render(model: @model)	
     @addItemsPreview()
-    @addEditPanel()
+    @addEditPanel() if Andriybazyuta.Sessions.logged_in()
     @

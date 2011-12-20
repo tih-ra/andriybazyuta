@@ -15,10 +15,17 @@ Templates = Andriybazyuta.Templates
 class Root.Layout extends Backbone.View
   className: 'container'
   template: Templates['root.layout']
+  events:
+    'click .menu_item' : 'menuSelect'
   
   initialize: ->
     $(@el).html @template.render()
     $(document.body).html @el
+    
+
+  menuSelect: (e)->
+    @$('.menu_item').removeClass('selected')
+    $(e.toElement).addClass('selected')
 
   index: ->
     view = new Views.Root.Index

@@ -5,6 +5,7 @@ app.Models = {}
 app.Routers = {}
 app.Templates = {}
 app.Views = {}
+app.Sessions = {}
                
 $(document).ready ->
     # creates instances of the routers but Root. (will initialize the Root later.)

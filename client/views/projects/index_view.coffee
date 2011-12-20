@@ -14,6 +14,7 @@ class Views.Projects.Index extends Backbone.View
 
   addAll: ->
     @collection.each(@addOne)
+    @addPanel() if Andriybazyuta.Sessions.logged_in()
 
   addOne: (project)->
     view = new Views.Projects.Project(model: project)
@@ -21,9 +22,9 @@ class Views.Projects.Index extends Backbone.View
 
   addPanel: ->
     view = new Views.Projects.New(collection: @collection)
-    @$('#panel').html view.render().el
+    @$('#panel').html(view.render().el)
 
   render: ->
     $(@el).html @template.render()
-    @addPanel()
+     
     @

@@ -3,10 +3,15 @@ mongoose = require('mongoose')
 alleup = require('alleup')
 vimeo = require('vimeo-client')
 
+# REST #
+ 
 
 app = Andriybazyuta = process['Andriybazyuta'] = express.createServer()
 app.mode = if !(getMode?()) then 'prod' else getMode()
 app.port = 3002
+
+require.paths.unshift( if app.mode is 'prod' then './api' else './server.dev/api');
+sessions_helper = require('helpers/sessions')
 
 app.use(express.logger(format: "\u001b[1m :date \u001b[1m:method\u001b[0m \u001b[33m:url\u001b[0m :response-time ms\u001b[0m :status")) unless app.mode is 'prod'
 
@@ -33,8 +38,6 @@ app.get '/include.json', (req, res) -> res.sendfile('include.json')
 
 app.get '/static/*', (req, res) -> res.sendfile('static/' + req.params[0])
 
-# REST #
-require.paths.unshift( if app.mode is 'prod' then './api' else './server.dev/api');
 
 projects = require('controllers/projects.js')
 app.post('/projects', projects.post)
@@ -46,8 +49,15 @@ app.post('/projects/:id/videos', projects.video_post)
 app.post('/projects/:id/embeds', projects.embed_post)
 app.del('/projects/:id/embeds/:embed_id', projects.embed_destroy)
 
+
 app.get '/projects/item/:version/:file', (req, res) ->
   res.redirect(app.alleup_project.url(req.params['file'], req.params['version']))
+
+app.get '/logged_in', (req, res) ->
+  if sessions_helper.logged_in(req, res)
+    res.send(req.session.vimeo)
+  else
+    res.end()    
 
 app.get '/vimeo/video', (req, res) ->
   vimeo.get

@@ -54,6 +54,10 @@ body {
 		color: @middle;
 	}
 }
+a.header:hover {
+	
+	text-decoration: none;
+}
 
 .menu {
 	list-style: none;
@@ -62,16 +66,20 @@ body {
 	line-height: 2em;
 	
 	li {
-		color: @plain;
+		
 		display: inline;
 		text-indent: -9999px;
 		margin: 0;
 		padding: 0 12px 0 0;
+		a {
+			color: @plain;
+		}
+		a.selected {
+			color: @dark;
+		}
 		
 	}
-	.selected {
-		color: @dark;
-	}
+	
 }
 
 h3 {
