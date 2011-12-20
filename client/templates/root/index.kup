@@ -9,3 +9,9 @@ div class: 'span4 offset1', ->
 div class: 'span4 offset1', ->
   h3 'CONTACTS'
   p 'COOL is a leading international partnership practicing architecture and urban planning. Our buildings around the world insist on clever forms while inventing new options for everyday use and content. COOL is led by three partners – '
+
+div class: 'span14', id: 'main_image', ->
+  div id: 'main_image_info', ->
+    h1 Base.Tools.styleTitle('Latest Info')
+    p 'COOL is a leading international partnership practicing architecture and urban planning.'
+  img src: '/static/tmp/main.jpg', width: '820px'
