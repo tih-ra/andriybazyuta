@@ -15,3 +15,12 @@ div class: 'span14', id: 'main_image', ->
     h1 Base.Tools.styleTitle('Latest Info')
     p 'COOL is a leading international partnership practicing architecture and urban planning.'
   img src: '/static/tmp/main.jpg', width: '820px'
+
+div class: 'span14 bottom_wrapper', ->
+  div class: 'row', ->
+    div class: 'span5 bottom_info', -> 
+      div '1600 Amphitheatre Parkway Mountain View, CA 94043 Phone: +1 650-253-0000 Fax: +1 650-253-0001'
+    div class: 'span4 bottom_info', -> ''
+    div class: 'span5 bottom_info', ->
+      div ->
+        h1 'Go'
