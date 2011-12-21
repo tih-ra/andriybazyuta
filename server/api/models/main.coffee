@@ -1,6 +1,3 @@
-Items = require('models/items.js');
-Embeds = require('models/embeds.js');
-
 mongoose = require("mongoose")
 app = Andriybazyuta = process['Andriybazyuta']
 
@@ -10,8 +7,8 @@ postSchema = new Schema(
   title: String
   description: String
   address: String
-  items: [Items]
-  embeds: [Embeds]
+  file: String
+  embed: String
 )
 
 module.exports = app.db.model("Main", postSchema)
