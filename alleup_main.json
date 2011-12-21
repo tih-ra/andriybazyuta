@@ -1,0 +1,20 @@
+{
+	"variants": {
+		"resize": {
+			"main": "820x820"
+		},
+		"crop": {
+		}
+	},
+	
+	"storage": {
+		"aws": {
+			"key" : "AKIAJEWPDNJCMR3Y3ARA",
+			"secret" : "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",
+			"bucket" : "pukybox"
+		},
+		"dir": {
+			"path" : "./static/images/"
+		}
+	}
+}
