@@ -1,0 +1,2 @@
+div class: 'well', ->
+  button class: 'btn info', id: 'edit_main', -> 'Edit Main Page'

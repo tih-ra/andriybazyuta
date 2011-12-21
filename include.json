@@ -26,6 +26,7 @@
 ,       { "url": "models/video.coffee" }
 ,       { "url": "models/embed.coffee" }
 ,       { "url": "models/session.coffee" }
+,       { "url": "models/main.coffee" }
 
 ,       { "url": "collections/projects.coffee" }
 ,       { "url": "collections/items.coffee" }
@@ -37,6 +38,7 @@
 
 ,       { "url": "templates/root/layout.kup" }
 ,       { "url": "templates/root/index.kup" }
+,       { "url": "templates/root/main.kup" }
 ,       { "url": "templates/projects/index.kup" }
 ,       { "url": "templates/projects/project.kup" }
 ,       { "url": "templates/projects/gallery.kup" }
@@ -51,6 +53,8 @@
 ,       { "url": "templates/embeds/embed.kup" }
 ,       { "url": "templates/videos/embed.kup" }
 ,       { "url": "templates/videos/vimeo.kup" }
+,       { "url": "templates/main/edit_modal.kup" }
+,       { "url": "templates/main/edit.kup" }
 
 ,       { "url": "views/root_view.coffee" }
 ,       { "url": "views/projects/index_view.coffee" }
@@ -72,6 +76,9 @@
 
 ,       { "url": "views/items/preview_view.coffee" }
 ,       { "url": "views/items/gallery_view.coffee" }
+
+,       { "url": "views/main/edit_modal_view.coffee" }
+,       { "url": "views/main/edit_view.coffee" }
 
 ,       { "url": "views/shared/progress_view.coffee" }
 

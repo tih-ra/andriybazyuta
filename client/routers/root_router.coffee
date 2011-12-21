@@ -9,12 +9,8 @@ class Andriybazyuta.Routers.Root extends Backbone.Router
 
   initialize: ->
     @view = new Views.Layout
-    @sessions = new Andriybazyuta.Collections.Sessions
-
-    @sessions.bind('reset', @addSessions, @)
-
-  addSessions: ->
-    Andriybazyuta.Sessions = @sessions
+    Andriybazyuta.Sessions = new Andriybazyuta.Collections.Sessions
+#    @sessions.bind('reset', @addSessions, @)
         
   index: ->
     @view.index()

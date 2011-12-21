@@ -19,6 +19,7 @@ module.exports = (app, vimeo) ->
 
   main = require('controllers/main.js')
   app.get('/main', main.one)
+  app.post('/main', main.update)
 
 
 

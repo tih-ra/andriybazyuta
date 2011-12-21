@@ -1,0 +1,22 @@
+div class: 'modal-header', ->
+  a href: '#', class: 'close', -> 'x'
+  h3 "Edit MAin Page"
+div class: 'modal-body', ->
+  div ->
+    form class: 'form-stacked', ->
+      fieldset ->
+        div class: 'clearfix', ->
+          label 'Header Title'
+          div class: 'input', ->
+            input type: 'text', name: 'title', value: @model.get('title'), class: 'span8'
+        div class: 'clearfix', ->
+          label 'Header Description'
+          div class: 'input', ->
+            textarea name: 'description', rows: 5, class: 'span8', -> @model.get('description')
+        div class: 'clearfix', ->
+          label 'Address'
+          div class: 'input', ->
+            textarea name: 'address', rows: 5, class: 'span8', -> @model.get('address')
+
+div class: 'modal-footer', ->
+	button class: 'btn primary', id: 'save_main', -> 'Save'

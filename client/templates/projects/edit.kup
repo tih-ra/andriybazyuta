@@ -1,4 +1,4 @@
-div class: 'grid14', ->
+div class: 'span14', ->
   div class: 'well', ->
     button class: 'btn info', id: 'add_items', -> 'Edit Project'
     button class: 'btn danger', id: 'delete_project', -> 'Delete'

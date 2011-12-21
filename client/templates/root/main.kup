@@ -1,0 +1,14 @@
+div class: 'span14', id: 'main_image', ->
+  div id: 'main_image_info', ->
+    h1 -> Base.Tools.styleTitle(@model.get('title')) if @model.has('title')
+    p -> @model.get('description')
+  img src: '/static/tmp/main.jpg', width: '820px'
+
+div class: 'span14 bottom_wrapper', ->
+  div class: 'row', ->
+    div class: 'span5 bottom_info', -> 
+      div @model.get('address')
+    div class: 'span4 bottom_info', -> ''
+    div class: 'span5 bottom_info', ->
+      div ->
+        h1 'Projects'
