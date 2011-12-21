@@ -17,6 +17,9 @@ module.exports = (app, vimeo) ->
   app.post('/projects/:id/embeds', projects.embed_post)
   app.del('/projects/:id/embeds/:embed_id', projects.embed_destroy)
 
+  main = require('controllers/main.js')
+  app.get('/main', main.one)
+
 
 
   app.get '/projects/item/:version/:file', (req, res) ->

@@ -89,10 +89,12 @@
         { "url": "server.coffee" }
 ,       { "url": "conf/routes.coffee" }
 ,		{ "url": "api/controllers/projects.coffee" }
+,		{ "url": "api/controllers/main.coffee" }
 ,		{ "url": "api/models/project.coffee" }
 ,       { "url": "api/models/items.coffee" }
 ,       { "url": "api/models/videos.coffee" }
 ,       { "url": "api/models/embeds.coffee" }
+,       { "url": "api/models/main.coffee" }
 ,       { "url": "api/helpers/sessions.coffee" }
 
     ]
