@@ -7,7 +7,6 @@ class Views.Main.EditModal extends Backbone.View
 
   events:
     'click #save_main' : 'save'
-    'click #background_image_button' : 'upload_image'
 
   onClose: ->
     @model.trigger('edit:modal', false)
@@ -20,19 +19,21 @@ class Views.Main.EditModal extends Backbone.View
       success: (model) =>
         console.log(model)
 
-  upload_image: (e)->
-    e.preventDefault()
-    
+  initUploader: ->
+    view = new Views.Shared.Uploader({model: @model, path: "/main/image", parent: @, button: 'upload_main_file'})
+    @$('.upload').html view.render().el
 
+  addItem: (file) ->
+    @model.set({file: file})
 
   updateAttributes: ->
     title: @$('input[name="title"]').val()
     description: @$('textarea[name="description"]').val()
     address: @$('textarea[name="address"]').val() 
 
-
   render: ->
     $(@el).html @template.render(model: @model)
+    @initUploader()
 
     _this = @
     $(@el).bind 'hidden', -> _this.onClose()
@@ -40,4 +41,6 @@ class Views.Main.EditModal extends Backbone.View
     $(document.body).append @el
     @model.trigger('edit:modal', true)
     @model.trigger('attach:uploader', true)
+
+    
     @

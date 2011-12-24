@@ -10,6 +10,7 @@ class Views.Shared.Uploader extends Backbone.View
     @model = options.model
     @parent = options.parent
     @path = options.path
+    @button = options.button ||= 'upload_item_file'
 
     @model.bind 'attach:uploader', @loading, @
 
@@ -17,7 +18,7 @@ class Views.Shared.Uploader extends Backbone.View
     if state then @attachUploader(@path) else @removeUploader()  
 
   attachUploader: (path) ->
-    @uploader = new Base.Tools.uploader(path, @, @parent)
+    @uploader = new Base.Tools.uploader(path, @, @parent, @button)
 
   removeUploader: ->
     @uploader.destroy()

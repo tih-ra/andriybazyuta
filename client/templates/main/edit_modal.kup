@@ -20,7 +20,8 @@ div class: 'modal-body', ->
         div class: 'clearfix', ->
           label 'Background Image'
           div class: 'input', ->
-            button id: 'background_image_button', class: 'btn info', -> 'Upload Backgroudn Image'
+            button id: 'upload_main_file', class: 'btn info', -> 'Upload Backgroudn Image'
+	          div class: 'upload', ->
 
 
 div class: 'modal-footer', ->

@@ -1,10 +1,10 @@
 window.Base = {}
 @Base.Tools =
   
-  uploader: (path, object, parent) ->
+  uploader: (path, object, parent, button) ->
     uploader = new plupload.Uploader
       runtimes: 'html5'
-      browse_button: 'upload_item_file'
+      browse_button: button
       max_file_size: '50mb'
       url: path
       #flash_swf_url: '/assets/plupload.flash.swf'

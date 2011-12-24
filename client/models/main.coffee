@@ -6,10 +6,12 @@ class Andriybazyuta.Models.Main extends Backbone.Model
     title: null
     description: null
     address: null
+    file: null
 	
   toJSON: ->
     title: @get('title')
     address: @get('address')
     description: @get('description')
     slug: @get('slug')
+    file: @get('file')
 
