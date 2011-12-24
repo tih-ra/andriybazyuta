@@ -81,6 +81,7 @@
 ,       { "url": "views/main/edit_view.coffee" }
 
 ,       { "url": "views/shared/progress_view.coffee" }
+,       { "url": "views/shared/uploader_view.coffee" }
 
 ,       { "url": "routers/root_router.coffee" }
 

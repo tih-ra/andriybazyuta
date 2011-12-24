@@ -1,7 +1,7 @@
 window.Base = {}
 @Base.Tools =
   
-  uploader: (path, object) ->
+  uploader: (path, object, parent) ->
     uploader = new plupload.Uploader
       runtimes: 'html5'
       browse_button: 'upload_item_file'
@@ -35,7 +35,7 @@ window.Base = {}
       up.start()
 
     uploader.bind 'FileUploaded', (up, file, response) =>
-      object.addItem(response.response)
+      parent.addItem(response.response)
 
     return uploader
 

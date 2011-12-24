@@ -7,15 +7,23 @@ class Views.Main.EditModal extends Backbone.View
 
   events:
     'click #save_main' : 'save'
+    'click #background_image_button' : 'upload_image'
 
   onClose: ->
     @model.trigger('edit:modal', false)
+    @model.trigger('attach:uploader', false)
+    @model.unbind 'attach:uploader'
 
   save: ->
     @model.set @updateAttributes()
     @model.save @updateAttributes(),
       success: (model) =>
         console.log(model)
+
+  upload_image: (e)->
+    e.preventDefault()
+    
+
 
   updateAttributes: ->
     title: @$('input[name="title"]').val()
@@ -31,4 +39,5 @@ class Views.Main.EditModal extends Backbone.View
 
     $(document.body).append @el
     @model.trigger('edit:modal', true)
+    @model.trigger('attach:uploader', true)
     @

@@ -71,50 +71,27 @@ class Views.Projects.TabEdit extends Backbone.View
   render: ->
     $(@el).html @template.render(model: @model)
     @	
-	
+
+
+
 class Views.Projects.TabUpload extends Backbone.View
   template: Templates['projects.tab_upload']
   id: 'tab_upload'
 
-  statuses: ['queued', 'uploading', 'danger', 'info'] 
-
-  initialize: ->
-    @model.bind 'attach:uploader', @loading, @
-
-  loading: (state) ->
-    if state then @attachUploader("/projects/#{@model.get('_id')}/items") else @removeUploader()  
-
-  attachUploader: (path) ->
-    @uploader = new Base.Tools.uploader(path, @)
-
-  removeUploader: ->
-    @uploader.destroy()
+  initUploader: ->
+    view = new Views.Shared.Uploader({model: @model, path: "/projects/#{@model.get('_id')}/items", parent: @})
+    @$('.upload').html view.render().el
 
   render: ->
     $(@el).html @template.render()
-    
+    @initUploader()
     @
-
-  filesAdded: (files) ->
-    _(files).each (file) =>
-      view = new Views.Shared.Progress({file: file})
-
-      @$('.upload').append(view.render().el)
-
-  setState: (file) ->
-    $("##{file.id} > div").css(width: "#{file.percent}%")
-
-  setPercent: (file) ->
-    #message = I18n.t('editor.items.new_file.percent', percent: "#{file.percent} %")
-
-  setStatus: (file) ->
-    status = @statuses[file.status - 2]
-    $("##{file.id}").addClass(status)
 
   addItem: (file) ->
     model = new Andriybazyuta.Models.Item
     model.set({file: file})
     @model.items.add(model)
+
 
 class Views.Projects.TabVimeo extends Backbone.View
   id: 'tab_vimeo'

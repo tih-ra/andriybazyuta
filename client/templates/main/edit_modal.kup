@@ -12,11 +12,16 @@ div class: 'modal-body', ->
         div class: 'clearfix', ->
           label 'Header Description'
           div class: 'input', ->
-            textarea name: 'description', rows: 5, class: 'span8', -> @model.get('description')
+            textarea name: 'description', rows: 3, class: 'span8', -> @model.get('description')
         div class: 'clearfix', ->
           label 'Address'
           div class: 'input', ->
             textarea name: 'address', rows: 5, class: 'span8', -> @model.get('address')
+        div class: 'clearfix', ->
+          label 'Background Image'
+          div class: 'input', ->
+            button id: 'background_image_button', class: 'btn info', -> 'Upload Backgroudn Image'
+
 
 div class: 'modal-footer', ->
 	button class: 'btn primary', id: 'save_main', -> 'Save'
