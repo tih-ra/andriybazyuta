@@ -17,6 +17,8 @@ exports.update = (req, res) ->
         main.title = req.body.title
         main.description = req.body.description
         main.address = req.body.address
+        main.embed = req.body.embed
+        main.media_type = req.body.media_type
         
         main.save()
         res.send(main)

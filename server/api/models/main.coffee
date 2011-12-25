@@ -9,6 +9,7 @@ postSchema = new Schema(
   address: String
   file: String
   embed: String
+  media_type: { type: String, default: 'image' }
 )
 
 module.exports = app.db.model("Main", postSchema)

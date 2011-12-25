@@ -2,8 +2,11 @@ div class: 'span14', id: 'main_image', ->
   div id: 'main_image_info', ->
     h1 -> Base.Tools.styleTitle(@model.get('title')) if @model.has('title')
     p -> @model.get('description')
-  img src: @model.file_url('main'), width: '820px'
-
+  switch @model.get('media_type')
+    when 'image'
+      img src: @model.file_url('main'), width: '820px'
+    when 'embed'
+      iframe width: 820, height: 447,  src: @model.get('embed'), frameborder: 0, ->
 div class: 'span14 bottom_wrapper', ->
   div class: 'row', ->
     div class: 'span5 bottom_info', -> 

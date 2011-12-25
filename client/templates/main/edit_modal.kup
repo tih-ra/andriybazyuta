@@ -17,6 +17,16 @@ div class: 'modal-body', ->
           label 'Address'
           div class: 'input', ->
             textarea name: 'address', rows: 5, class: 'span8', -> @model.get('address')
+       div class: 'clearfix', ->
+         label 'Main Background Type'
+         div class: 'input', ->
+           select name: 'media_type', class: 'span8', ->
+             option value: 'image', -> 'image'
+             option value: 'embed', -> 'embed'
+        div class: 'clearfix', ->
+          label 'Background Embed'
+          div class: 'input', ->
+            input type: 'text', name: 'embed', value: @model.get('embed'), class: 'span8'
         div class: 'clearfix', ->
           label 'Background Image'
           div class: 'input', ->

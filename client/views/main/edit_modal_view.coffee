@@ -31,11 +31,13 @@ class Views.Main.EditModal extends Backbone.View
   updateAttributes: ->
     title: @$('input[name="title"]').val()
     description: @$('textarea[name="description"]').val()
-    address: @$('textarea[name="address"]').val() 
+    address: @$('textarea[name="address"]').val()
+    embed: @$('input[name="embed"]').val()
+    media_type: @$('select[name="media_type"]').val()  
 
   render: ->
     $(@el).html @template.render(model: @model)
-    
+    @$("option[value=#{@model.get('media_type')}]").attr({selected: 'selected'})
 
     _this = @
     $(@el).bind 'hidden', -> _this.onClose()
