@@ -44,17 +44,28 @@ class Root.Index extends Backbone.View
     @model.bind('change', @addMainPage, @)
     @model.fetch()
 
+    @projects = new Andriybazyuta.Collections.Projects
+
+    @projects.bind('reset', @addTopProjects, @)
+    @projects.fetch()
+
     Andriybazyuta.Sessions.bind('reset', @initEditPanel, @)
 		  
 
   addMainPage: ->
     view = new Views.Root.Main(model: @model)
-    @$('#main_page_wrapper').html view.render(model: @model).el
+    @$('#main_page_wrapper').html view.render().el
 
   addEditPanel: ->
     view = new Views.Main.Edit(model: @model)
     $(@el).prepend view.render().el
+
+  addTopProjects: ->
 	
+    _(@projects.getTopProjects()).each (project)->
+      view = new Views.Root.TopProject(model: project)
+      @$('#main_top_projects > .row').append view.render().el
+
   initEditPanel: ->
     @addEditPanel() if Andriybazyuta.Sessions.logged_in()
   
@@ -62,6 +73,16 @@ class Root.Index extends Backbone.View
     $(@el).html @template.render()
     @initEditPanel()
     @
+
+class Root.TopProject extends Backbone.View
+  template: Templates['root.top_project']
+  className: 'span4'
+
+  render: ->
+    $(@el).html @template.render(model: @model)
+    $(@el).addClass(@model.class)
+    @
+
 
 class Root.Main extends Backbone.View
   template: Templates['root.main']

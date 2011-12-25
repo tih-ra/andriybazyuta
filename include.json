@@ -38,6 +38,7 @@
 
 ,       { "url": "templates/root/layout.kup" }
 ,       { "url": "templates/root/index.kup" }
+,       { "url": "templates/root/top_project.kup" }
 ,       { "url": "templates/root/main.kup" }
 ,       { "url": "templates/projects/index.kup" }
 ,       { "url": "templates/projects/project.kup" }

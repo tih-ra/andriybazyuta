@@ -1,0 +1,2 @@
+h3 Base.Tools.styleTitle(@model.get('title')) if @model.has('title')
+p @model.get('description').substr(0, 250)+' ...' if @model.has('description')

@@ -5,3 +5,8 @@ Models = Andriybazyuta.Models
 class Andriybazyuta.Collections.Projects extends Backbone.Collection
   model: Models.Project
   url: '/projects'
+
+  getTopProjects: ->
+    projects = _.last @models, 3
+    _(_.rest(projects)).each (project) -> project.class = 'offset1'
+    return projects

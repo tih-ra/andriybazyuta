@@ -14,4 +14,4 @@ div class: 'span14 bottom_wrapper', ->
     div class: 'span4 bottom_info', -> ''
     div class: 'span5 bottom_info', ->
       div ->
-        h1 'Projects'
+        h1 -> a href: '#projects', -> 'Projects'
