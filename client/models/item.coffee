@@ -8,4 +8,4 @@ class Andriybazyuta.Models.Item extends Backbone.Model
     _id: @get('_id')
 
   file_url: (version) ->
-    "#{@collection.url}/item/#{version}/#{@get('file')}"
+    "/images/#{version}/#{@get('file')}"

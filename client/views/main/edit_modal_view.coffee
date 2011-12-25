@@ -13,6 +13,8 @@ class Views.Main.EditModal extends Backbone.View
     @model.trigger('attach:uploader', false)
     @model.unbind 'attach:uploader'
 
+    $(@el).remove()
+
   save: ->
     @model.set @updateAttributes()
     @model.save @updateAttributes(),
@@ -33,12 +35,13 @@ class Views.Main.EditModal extends Backbone.View
 
   render: ->
     $(@el).html @template.render(model: @model)
-    @initUploader()
+    
 
     _this = @
     $(@el).bind 'hidden', -> _this.onClose()
 
     $(document.body).append @el
+    @initUploader()
     @model.trigger('edit:modal', true)
     @model.trigger('attach:uploader', true)
 

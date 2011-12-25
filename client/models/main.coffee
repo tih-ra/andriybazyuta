@@ -15,3 +15,6 @@ class Andriybazyuta.Models.Main extends Backbone.Model
     slug: @get('slug')
     file: @get('file')
 
+  file_url: (version) ->
+    "/images/#{version}/#{@get('file')}"
+

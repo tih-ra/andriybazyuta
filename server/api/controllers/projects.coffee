@@ -2,6 +2,7 @@ app = Andriybazyuta = process['Andriybazyuta']
 Project = require('models/project.js')
 u = require('underscore')
 
+
 exports.post = (req, res) ->
   app.sessions_helper.auth_required req, res, (authorized) ->
     if authorized
@@ -25,8 +26,9 @@ exports.destroy = (req, res) ->
       Project.findOne _id: req.params.id, (err, project) ->
 	
         project.items.forEach (item) ->
-          app.alleup_project.remove item.file, (err) ->
+          app.alleup.remove(item.file, (err) ->
             if err then res.end(err)
+          , 'project')
 
         project.remove (err) ->
           res.send 'removed'
@@ -48,7 +50,7 @@ exports.item_post = (req, res) ->
   app.sessions_helper.auth_required req, res, (authorized) ->
     if authorized
 		
-      app.alleup_project.upload req, res, (err, file, res) ->
+      app.alleup.upload(req, res, (err, file, res) ->
         if err then res.send(err)
         Project.findById req.params.id, (err, project) ->
           project.items.push({file: file})
@@ -56,6 +58,7 @@ exports.item_post = (req, res) ->
           res.write(file)
 
           res.end()
+      , 'project')
 
 exports.video_post = (req, res) ->
   app.sessions_helper.auth_required req, res, (authorized) ->

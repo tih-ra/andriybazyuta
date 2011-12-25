@@ -20,11 +20,12 @@ module.exports = (app, vimeo) ->
   main = require('controllers/main.js')
   app.get('/main', main.one)
   app.post('/main', main.update)
+  app.post('/main/image', main.image)
 
 
 
-  app.get '/projects/item/:version/:file', (req, res) ->
-    res.redirect(app.alleup_project.url(req.params['file'], req.params['version']))
+  app.get '/images/:version/:file', (req, res) ->
+    res.redirect(app.alleup.url(req.params['file'], req.params['version']))
 
   app.get '/logged_in', (req, res) ->
     if app.sessions_helper.logged_in(req, res)

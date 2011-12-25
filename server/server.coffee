@@ -1,7 +1,9 @@
 express = require('kassit/node_modules/express')
 mongoose = require('mongoose')
-alleup = require('alleup')
+
 vimeo = require('vimeo-client')
+alleupInit = require('alleup')
+
 
 # REST #
  
@@ -31,7 +33,9 @@ app.use vimeo.middleware(
   permission: "read"
 )
 
-app.alleup_project = new alleup({storage : 'dir', config_file: "./alleup_project.json"});
+
+app.alleup = new alleupInit({storage : 'dir', config_file: "./alleup_conf.json"})
+
 
 require('routes.js')(app, vimeo)
         
