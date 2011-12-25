@@ -13,6 +13,7 @@
 ,       { "url": "lib/froogaloop2.min.js" }
 ,       { "url": "lib/jquery.mousewheel-3.0.6.pack.js" }
 ,       { "url": "lib/jquery.fancybox.pack.js" }
+,				{ "url": "lib/jquery.scrollTo-min.js" }
 
 
 ,       { "url": "lib/kassit.coffee"}

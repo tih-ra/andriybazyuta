@@ -1,7 +1,7 @@
 div class: 'row', ->
   div class: 'span9 description', -> @model.get('body')
 div class: 'row', ->
-  div class: 'span5', ->
+  div class: 'span5', id: "project_title_#{@model.get('_id')}",->
     h1 Base.Tools.styleTitle(@model.get('title')) if @model.has('title')
     p @model.get('description')
   div class: 'span9 items_preview'

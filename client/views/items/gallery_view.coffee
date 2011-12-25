@@ -23,4 +23,5 @@ class Views.Items.Gallery extends Backbone.View
   render: ->
     @addAll()
     Base.Tools.montage(@el, Base.Tools.montageGallery())
+    $.scrollTo({top:'0px', left:'0px'}, 1000)
     @

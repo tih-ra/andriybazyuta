@@ -21,6 +21,8 @@ class Views.Projects.Gallery extends Backbone.View
   close: ->
     $(@el).slideUp 'slow', ->
       $(@).remove()
+    $.scrollTo($("#project_title_#{@model.get('_id')}"), 1000)
+    
 
   includeVideos: ->
     if @model.videos.models.length || @model.embeds.models.length
