@@ -22,7 +22,11 @@ module.exports = (app, vimeo) ->
   app.post('/main', main.update)
   app.post('/main/image', main.image)
 
-
+  codes = require('controllers/codes.js')
+  app.post('/codes', codes.post)
+  app.get('/codes', codes.list)
+  app.del('/codes/:id', codes.destroy)
+  app.post('/codes/:id', codes.update)
 
   app.get '/images/:version/:file', (req, res) ->
     res.redirect(app.alleup.url(req.params['file'], req.params['version']))

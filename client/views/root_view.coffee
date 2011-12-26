@@ -6,6 +6,7 @@ VimeoVideos = Andriybazyuta.Views.VimeoVideos = {}
 Embeds = Andriybazyuta.Views.Embeds = {}
 Videos = Andriybazyuta.Views.Videos = {}
 Main = Andriybazyuta.Views.Main = {}
+Codes = Andriybazyuta.Views.Codes = {}
 
 Views = Andriybazyuta.Views
 
@@ -33,6 +34,10 @@ class Root.Layout extends Backbone.View
 
   projects: ->
     view = new Views.Projects.Index
+    $('#root').html view.render().el
+
+  codes: ->
+    view = new Views.Codes.Index
     $('#root').html view.render().el
 
 class Root.Index extends Backbone.View

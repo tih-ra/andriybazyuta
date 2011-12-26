@@ -1,0 +1,31 @@
+div class: 'modal-header', ->
+  a href: '#', class: 'close webfont x-alt'
+  h3 "Edit #{@model.get('title')}"
+div class: 'modal-body', ->
+  div ->
+    form class: 'form-stacked', ->
+      fieldset ->
+        div class: 'clearfix', ->
+          label 'Title'
+          div class: 'input', ->
+            input type: 'text', name: 'title', value: @model.get('title'), class: 'span8'
+        div class: 'clearfix', ->
+          label 'Description'
+          div class: 'input', ->
+            textarea name: 'description', rows: 3, class: 'span8', -> @model.get('description')
+        div class: 'clearfix', ->
+          label 'Code'
+          div class: 'input', ->
+            textarea name: 'body', rows: 3, class: 'span8', -> @model.get('body')
+        div class: 'clearfix', ->
+          label 'Link'
+          div class: 'input', ->
+            input type: 'text', name: 'link', value: @model.get('link'), class: 'span8'
+        div class: 'clearfix', ->
+          label 'Languages'
+          div class: 'input', ->
+            input type: 'text', name: 'languages', value: @model.get('languages'), class: 'span8'
+
+
+div class: 'modal-footer', ->
+	button class: 'btn primary', id: 'save_code', -> 'Save'

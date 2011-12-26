@@ -1,5 +1,5 @@
 div class: 'modal-header', ->
-  a href: '#', class: 'close', -> 'x'
+  a href: '#', class: 'close webfont x-alt'
   h3 "Edit MAin Page"
 div class: 'modal-body', ->
   div ->

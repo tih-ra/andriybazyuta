@@ -6,6 +6,7 @@ class Andriybazyuta.Routers.Root extends Backbone.Router
   routes:
     '/*' : 'index'
     'projects' : 'projects'
+    'codes' : 'codes'
 
   initialize: ->
     @view = new Views.Layout
@@ -17,6 +18,9 @@ class Andriybazyuta.Routers.Root extends Backbone.Router
 
   projects: ->
     @view.projects()
+
+  codes: ->
+    @view.codes()
     
     # example of another method within the router
     #about: ->

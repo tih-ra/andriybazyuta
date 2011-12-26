@@ -1,0 +1,4 @@
+div class: 'span14', ->
+  div class: 'well', ->
+    button class: 'btn info', id: 'edit_code', -> 'Edit Code'
+    button class: 'btn danger', id: 'delete_code', -> 'Delete'

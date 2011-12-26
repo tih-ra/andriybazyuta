@@ -28,6 +28,7 @@
 ,       { "url": "models/embed.coffee" }
 ,       { "url": "models/session.coffee" }
 ,       { "url": "models/main.coffee" }
+,       { "url": "models/code.coffee" }
 
 ,       { "url": "collections/projects.coffee" }
 ,       { "url": "collections/items.coffee" }
@@ -35,6 +36,7 @@
 ,       { "url": "collections/videos.coffee" }
 ,       { "url": "collections/embeds.coffee" }
 ,       { "url": "collections/sessions.coffee" }
+,       { "url": "collections/codes.coffee" }
 
 
 ,       { "url": "templates/root/layout.kup" }
@@ -57,6 +59,14 @@
 ,       { "url": "templates/videos/vimeo.kup" }
 ,       { "url": "templates/main/edit_modal.kup" }
 ,       { "url": "templates/main/edit.kup" }
+,       { "url": "templates/codes/index.kup" }
+,       { "url": "templates/codes/new.kup" }
+,       { "url": "templates/codes/code.kup" }
+,       { "url": "templates/codes/edit.kup" }
+,       { "url": "templates/codes/edit_modal.kup" }
+
+
+
 
 ,       { "url": "views/root_view.coffee" }
 ,       { "url": "views/projects/index_view.coffee" }
@@ -65,6 +75,12 @@
 ,       { "url": "views/projects/edit_view.coffee" }
 ,       { "url": "views/projects/new_view.coffee" }
 ,       { "url": "views/projects/edit_modal_view.coffee" }
+
+,       { "url": "views/codes/index_view.coffee" }
+,       { "url": "views/codes/code_view.coffee" }
+,       { "url": "views/codes/edit_view.coffee" }
+,       { "url": "views/codes/new_view.coffee" }
+,       { "url": "views/codes/edit_modal_view.coffee" }
 
 ,       { "url": "views/videos/index_view.coffee" }
 ,       { "url": "views/videos/vimeo_view.coffee" }
@@ -89,6 +105,7 @@
 
 ,       { "url": "style/tools/bootstrap.custom.css" }
 ,       { "url": "style/tools/iconic.css" }
+,       { "url": "style/tools/webfont.css" }
 ,       { "url": "style/tools/jquery.fancybox.css" }
 ,       { "url": "style/master.less" }
 ,       { "url": "style/manager.less" }
@@ -100,11 +117,13 @@
 ,       { "url": "conf/routes.coffee" }
 ,		{ "url": "api/controllers/projects.coffee" }
 ,		{ "url": "api/controllers/main.coffee" }
+,		{ "url": "api/controllers/codes.coffee" }
 ,		{ "url": "api/models/project.coffee" }
 ,       { "url": "api/models/items.coffee" }
 ,       { "url": "api/models/videos.coffee" }
 ,       { "url": "api/models/embeds.coffee" }
 ,       { "url": "api/models/main.coffee" }
+,       { "url": "api/models/code.coffee" }
 ,       { "url": "api/helpers/sessions.coffee" }
 
     ]
