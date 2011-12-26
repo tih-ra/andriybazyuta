@@ -26,5 +26,9 @@ a.webfont:hover {
 .webfont.movie:before { content: 'M'; }
 .webfont.youtube:before { content: 'y'; }
 .webfont.code:before { content: 'H'; }
+.webfont.icons:before { content: '¹'; }
+.webfont.link:before { content: 'K'; }
+
+
 
 

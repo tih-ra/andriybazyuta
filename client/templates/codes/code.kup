@@ -1,8 +1,11 @@
 div class: 'row', ->
-  div class: 'span5', ->
+  div class: 'span14', -> 
     h1 Base.Tools.styleTitle(@model.get('title')) if @model.has('title')
+  div class: 'span5', ->
     p @model.get('description')
-    a href: @model.get('link'), class: 'webfont code', -> span @model.get('link')
-  div class: 'span9', -> @model.get('body')
+    p class: 'top_default', -> a href: @model.get('link'), class: 'webfont link', -> span @model.get('link')
+    p class: 'top_default', -> a class: 'webfont icons', -> span @model.get('languages')
+  div class: 'span9', -> pre -> code  -> @model.escape('body')
 
 hr()
+

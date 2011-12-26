@@ -4,7 +4,7 @@ Templates = Andriybazyuta.Templates
 
 class Views.Codes.Code extends Backbone.View
   template: Templates['codes.code']
-  className: 'project'
+  className: 'code'
 
   initialize: ->
     @model.bind 'destroy', @remove, @
@@ -22,6 +22,9 @@ class Views.Codes.Code extends Backbone.View
     $(@el).remove()
 
   render: ->
-    $(@el).html @template.render(model: @model)	
+    
+    $(@el).html @template.render(model: @model)
+    @$('pre code:not(.no-highlight)').highlight()
+    
     @addEditPanel() if Andriybazyuta.Sessions.logged_in()
     @

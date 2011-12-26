@@ -25,5 +25,5 @@ class Views.Codes.Index extends Backbone.View
 
   render: ->
     $(@el).html @template.render()
-     
+    
     @
