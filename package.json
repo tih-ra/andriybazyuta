@@ -11,7 +11,7 @@
         "kassit":">=0.1.5"
 ,	   "mongoose": "" 
 ,	   "alleup": "0.1.0" 
-,      "vimeo-client": "0.1.6"
+,      "vimeo-client": "0.1.7"
 ,	   "underscore": "" 
     }
 ,   "devDependencies": {}
