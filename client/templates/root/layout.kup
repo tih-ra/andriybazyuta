@@ -3,7 +3,7 @@ div class: 'row', ->
     ul class: 'menu', ->
       li -> a href: '#projects', class: 'menu_item', -> 'PROJECTS'
       li -> a href: '#codes', class: 'menu_item', -> 'CODE'
-      li -> a href: '#press', class: 'menu_item', -> 'PRESS'
+      li -> a href: '#bio', class: 'menu_item', -> 'BIO'
 
 div class: 'row', ->
   div class: 'span14 offset1', ->

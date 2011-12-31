@@ -31,6 +31,8 @@
 ,       { "url": "models/session.coffee" }
 ,       { "url": "models/main.coffee" }
 ,       { "url": "models/code.coffee" }
+,       { "url": "models/bio.coffee" }
+,       { "url": "models/bio_item.coffee" }
 
 ,       { "url": "collections/projects.coffee" }
 ,       { "url": "collections/items.coffee" }
@@ -39,6 +41,8 @@
 ,       { "url": "collections/embeds.coffee" }
 ,       { "url": "collections/sessions.coffee" }
 ,       { "url": "collections/codes.coffee" }
+,       { "url": "collections/bios.coffee" }
+,       { "url": "collections/bio_items.coffee" }
 
 
 ,       { "url": "templates/root/layout.kup" }
@@ -127,6 +131,8 @@
 ,       { "url": "api/models/embeds.coffee" }
 ,       { "url": "api/models/main.coffee" }
 ,       { "url": "api/models/code.coffee" }
+,       { "url": "api/models/bio.coffee" }
+,       { "url": "api/models/bio_items.coffee" }
 ,       { "url": "api/helpers/sessions.coffee" }
 
     ]
