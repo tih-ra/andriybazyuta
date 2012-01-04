@@ -1,0 +1,4 @@
+label 'Date / Description'
+div class: 'input', ->
+  input type: 'text', name: 'date', value: @model.get('date'), class: 'span2'
+  input type: 'text', name: 'description', value: @model.get('description'), class: 'span6 left_default'

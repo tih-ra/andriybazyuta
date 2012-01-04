@@ -5,5 +5,6 @@ Models = Andriybazyuta.Models
 class Andriybazyuta.Collections.BioItems extends Backbone.Collection
   model: Models.BioItem
 
-  initialize: (collection) ->
+  initialize: (collection, options) ->
+    @parent_id = options.parent_id
     

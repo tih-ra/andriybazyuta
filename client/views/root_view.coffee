@@ -8,6 +8,7 @@ Videos = Andriybazyuta.Views.Videos = {}
 Main = Andriybazyuta.Views.Main = {}
 Codes = Andriybazyuta.Views.Codes = {}
 Bios = Andriybazyuta.Views.Bios = {}
+BioItems = Andriybazyuta.Views.BioItems = {}
 
 Views = Andriybazyuta.Views
 
@@ -24,7 +25,7 @@ class Root.Layout extends Backbone.View
     $(@el).html @template.render()
     $(document.body).html @el
     
-
+    
   menuSelect: (e)->
     @$('.menu_item').removeClass('selected')
     $(e.toElement).addClass('selected')

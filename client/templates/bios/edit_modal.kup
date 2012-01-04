@@ -2,18 +2,8 @@ div class: 'modal-header', ->
   a href: '#', class: 'close webfont x-alt'
   h3 "Edit #{@model.get('title')}"
 div class: 'modal-body', ->
-  div ->
-    form class: 'form-stacked', ->
-      fieldset ->
-        div class: 'clearfix', ->
-          label 'Title'
-          div class: 'input', ->
-            input type: 'text', name: 'title', value: @model.get('title'), class: 'span8'
-        div class: 'clearfix', ->
-          label 'Body'
-          div class: 'input', ->
-            textarea name: 'body', rows: 3, class: 'span8', -> @model.get('body')
-        div class: 'clearfix', ->
+  ul class: 'tabs', ->
+    li class: 'active', -> a href: '#tab_edit', -> 'Edit'
+    li -> a href: '#tab_items', -> 'Manage Items'
 
-div class: 'modal-footer', ->
-	button class: 'btn primary', id: 'save_bio', -> 'Save'
+  div class: 'pill-content', ->

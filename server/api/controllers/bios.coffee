@@ -36,3 +36,13 @@ exports.update = (req, res) ->
 
         bio.save()
         res.send(bio)
+
+exports.item_post = (req, res) ->
+  app.sessions_helper.auth_required req, res, (authorized) ->
+    if authorized
+
+      Bio.findById req.params.id, (err, bio) ->
+        bio.items.push({date: req.body.date, description: req.body.description})
+        bio.save()
+
+        res.end()

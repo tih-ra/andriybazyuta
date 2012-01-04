@@ -1,0 +1,14 @@
+div ->
+  form class: 'form-stacked', ->
+    fieldset ->
+      div class: 'clearfix', ->
+        label 'Title'
+        div class: 'input', ->
+          input type: 'text', name: 'title', value: @model.get('title'), class: 'span8'
+      div class: 'clearfix', ->
+        label 'Body'
+        div class: 'input', ->
+          textarea name: 'body', rows: 5, class: 'span8', -> @model.get('body')
+	
+div class: 'modal-footer', ->
+  button class: 'btn primary', id: 'save_edited', -> a class: 'updated_button', -> span 'Save'

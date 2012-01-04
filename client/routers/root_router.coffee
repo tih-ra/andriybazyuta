@@ -25,7 +25,7 @@ class Andriybazyuta.Routers.Root extends Backbone.Router
 
   bios: ->
     @view.bios()
-    
+
     # example of another method within the router
     #about: ->
         #console.log 'Root.about() was called upon!'

@@ -8,3 +8,6 @@ class Andriybazyuta.Models.BioItem extends Backbone.Model
     date: @get('date')
     description: @get('description')
     _id: @get('_id')
+
+  url: ->
+    "/bios/#{@collection.parent_id}/items"

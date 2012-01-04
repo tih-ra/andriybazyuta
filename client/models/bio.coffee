@@ -6,7 +6,7 @@ class Andriybazyuta.Models.Bio extends Backbone.Model
     _id: null
 
   initialize: ->
-    @items = new Andriybazyuta.Collections.BioItems(@get('items'))
+    @items = new Andriybazyuta.Collections.BioItems(@get('items'), {parent_id: @get('_id')})
 
   url: -> if @get('_id') then "/bios/#{@get('_id')}" else "/bios"
 
