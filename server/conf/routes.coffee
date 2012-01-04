@@ -28,6 +28,12 @@ module.exports = (app, vimeo) ->
   app.del('/codes/:id', codes.destroy)
   app.post('/codes/:id', codes.update)
 
+  bios = require('controllers/bios.js')
+  app.post('/bios', bios.post)
+  app.get('/bios', bios.list)
+  app.del('/bios/:id', bios.destroy)
+  app.post('/bios/:id', bios.update)
+
   app.get '/images/:version/:file', (req, res) ->
     res.redirect(app.alleup.url(req.params['file'], req.params['version']))
 

@@ -7,6 +7,7 @@ Embeds = Andriybazyuta.Views.Embeds = {}
 Videos = Andriybazyuta.Views.Videos = {}
 Main = Andriybazyuta.Views.Main = {}
 Codes = Andriybazyuta.Views.Codes = {}
+Bios = Andriybazyuta.Views.Bios = {}
 
 Views = Andriybazyuta.Views
 
@@ -38,6 +39,10 @@ class Root.Layout extends Backbone.View
 
   codes: ->
     view = new Views.Codes.Index
+    $('#root').html view.render().el
+
+  bios: ->
+    view = new Views.Bios.Index
     $('#root').html view.render().el
 
 class Root.Index extends Backbone.View

@@ -70,8 +70,11 @@
 ,       { "url": "templates/codes/code.kup" }
 ,       { "url": "templates/codes/edit.kup" }
 ,       { "url": "templates/codes/edit_modal.kup" }
-
-
+,       { "url": "templates/bios/index.kup" }
+,       { "url": "templates/bios/new.kup" }
+,       { "url": "templates/bios/bio.kup" }
+,       { "url": "templates/bios/edit.kup" }
+,       { "url": "templates/bios/edit_modal.kup" }
 
 
 ,       { "url": "views/root_view.coffee" }
@@ -87,6 +90,12 @@
 ,       { "url": "views/codes/edit_view.coffee" }
 ,       { "url": "views/codes/new_view.coffee" }
 ,       { "url": "views/codes/edit_modal_view.coffee" }
+
+,       { "url": "views/bios/index_view.coffee" }
+,       { "url": "views/bios/bio_view.coffee" }
+,       { "url": "views/bios/new_view.coffee" }
+,       { "url": "views/bios/edit_view.coffee" }
+,       { "url": "views/bios/edit_modal_view.coffee" }
 
 ,       { "url": "views/videos/index_view.coffee" }
 ,       { "url": "views/videos/vimeo_view.coffee" }
@@ -125,6 +134,7 @@
 ,		{ "url": "api/controllers/projects.coffee" }
 ,		{ "url": "api/controllers/main.coffee" }
 ,		{ "url": "api/controllers/codes.coffee" }
+,		{ "url": "api/controllers/bios.coffee" }
 ,		{ "url": "api/models/project.coffee" }
 ,       { "url": "api/models/items.coffee" }
 ,       { "url": "api/models/videos.coffee" }

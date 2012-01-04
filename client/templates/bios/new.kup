@@ -1,0 +1,3 @@
+div class: 'grid14', ->
+  div class: 'well', ->
+    button class: 'btn info', id: 'new_bio', -> 'Add Bio'
