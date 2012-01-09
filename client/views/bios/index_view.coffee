@@ -13,7 +13,7 @@ class Views.Bios.Index extends Backbone.View
 
   addAll: ->
     @collection.each(@addOne)
-    @addPanel() #if Andriybazyuta.Sessions.logged_in()
+    @addPanel() if Andriybazyuta.Sessions.logged_in()
 
   addOne: (bio)->
     view = new Views.Bios.Bio(model: bio)

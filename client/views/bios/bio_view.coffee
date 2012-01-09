@@ -29,5 +29,5 @@ class Views.Bios.Bio extends Backbone.View
     
     $(@el).html @template.render(model: @model)
     @addItems()    
-    @addEditPanel() #if Andriybazyuta.Sessions.logged_in()
+    @addEditPanel() if Andriybazyuta.Sessions.logged_in()
     @
