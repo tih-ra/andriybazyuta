@@ -2,7 +2,7 @@ mongoose = require("mongoose")
 
 Schema = mongoose.Schema
 bio_itemsSchema = new Schema(
-  date: Date
+  eventedAt: { type: Date, 'default': Date.now }
   description: String
 )
 

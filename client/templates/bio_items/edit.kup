@@ -1,4 +1,5 @@
 label 'Date / Description'
 div class: 'input', ->
-  input type: 'text', name: 'date', value: @model.get('date'), class: 'span2'
-  input type: 'text', name: 'description', value: @model.get('description'), class: 'span6 left_default'
+  input type: 'text', name: "eventedAt[#{@model.get('_id')}]", value: @model.get('eventedAt'), class: 'span2'
+  input type: 'text', name: "description[#{@model.get('_id')}]", value: @model.get('description'), class: 'span6 left_default'
+  a class: 'delete_item webfont x-alt left_default', ->   

@@ -2,9 +2,9 @@ Templates = Andriybazyuta.Templates
 Views = Andriybazyuta.Views
 
 class Views.BioItems.Index extends Backbone.View
-  template: Templates['bio_items.index']
 
   initialize: ->
+    @collection.bind('add', @addOne, @)
     _.bindAll @, 'addOne', 'addAll'
 
   addAll: ->
@@ -12,9 +12,8 @@ class Views.BioItems.Index extends Backbone.View
 
   addOne: (item)->
     view = new Views.BioItems.Item(model: item)
-    @$('#bio_items').prepend( view.render().el )
+    $(@el).prepend( view.render().el )
 
   render: ->
-    $(@el).html @template.render()
-    
+    @addAll()
     @

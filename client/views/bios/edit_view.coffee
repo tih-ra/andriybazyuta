@@ -26,7 +26,7 @@ class Views.Bios.Edit extends Backbone.View
         console.log(response)
       error: (model, errors) ->
         console.log(errors)
-    Backbone.sync('delete', @model)
+      Backbone.sync('delete', @model)
 
   render: ->
     $(@el).html @template.render()

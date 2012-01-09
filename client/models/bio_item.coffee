@@ -1,13 +1,15 @@
 # decalring the class
 class Andriybazyuta.Models.BioItem extends Backbone.Model
   defaults:
-    date: null
+    eventedAt: null
     description: null
+    _id: null
 	
   toJSON: ->
-    date: @get('date')
+    eventedAt: @get('eventedAt')
     description: @get('description')
     _id: @get('_id')
 
   url: ->
-    "/bios/#{@collection.parent_id}/items"
+    if @get('_id') then "/bios/#{@collection.parent_id}/items/#{@get('_id')}" else "/bios/#{@collection.parent_id}/items"
+    

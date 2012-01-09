@@ -17,6 +17,10 @@ class Views.Bios.Bio extends Backbone.View
   onChange: ->
     @render()
     @model.trigger('edit:modal', true)
+
+  addItems: ->
+    view = new Views.BioItems.Index(collection: @model.items)
+    @$('.bio_items').html view.render().el
 	
   remove: ->
     $(@el).remove()
@@ -24,7 +28,6 @@ class Views.Bios.Bio extends Backbone.View
   render: ->
     
     $(@el).html @template.render(model: @model)
-    @$('pre bio:not(.no-highlight)').highlight()
-    
+    @addItems()    
     @addEditPanel() #if Andriybazyuta.Sessions.logged_in()
     @

@@ -63,28 +63,44 @@ class Views.Bios.TabItems extends Backbone.View
 
   events:
     'click #add_bio_item' : 'addItem'
+    'click #save_bio_items' : 'saveAll'
 
   initialize: ->
     @items = @model.items
+    @items.bind('add', @addOne, @)
+    _.bindAll @, 'addOne', 'addAll', 'saveOne', 'saveAll'
 
   addAll: ->
     @items.each @addOne
 
   addOne: (item) ->
     view = new Views.BioItems.Edit(model: item)
-    @$('#bios_items_wrapper').prepend view.render().el
+    @$('.bios_items_edit').append view.render().el
 
   addItem: ->
-    console.log 'here'
     model = new Andriybazyuta.Models.BioItem
     model.collection = @items
 
-    model.save {date : Date.now},
+    model.save {eventedAt : '2012-02-10', description: 'test'},
       success: (model, response) =>
         @items.add response
 
       error: (model, errors) =>
         console.log errors
+
+  saveAll: ->
+    @items.each @saveOne
+
+  saveOne: (item)->
+    item.set @itemUpdateAttributes(item.get('_id'))
+    item.save @itemUpdateAttributes(item.get('_id')),
+      success: (item) =>
+        console.log(item)
+
+  itemUpdateAttributes: (id)->
+    eventedAt : @$("input[name='evendedAt[#{id}]']").val()
+    description: @$("input[name='description[#{id}]']").val()
+	
 
   render: ->
     $(@el).html @template.render(model: @model)

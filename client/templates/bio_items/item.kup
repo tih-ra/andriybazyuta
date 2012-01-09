@@ -1,0 +1,4 @@
+div class: 'span2 reverce', -> span class: 'date', -> '2012-22-12'
+div class: 'span7', -> @model.get('description')
+hr()
+

@@ -78,6 +78,7 @@
 ,       { "url": "templates/bios/tab_edit.kup" }
 ,       { "url": "templates/bios/tab_items.kup" }
 ,       { "url": "templates/bio_items/edit.kup" }
+,       { "url": "templates/bio_items/item.kup" }
 
 
 ,       { "url": "views/root_view.coffee" }
@@ -101,6 +102,8 @@
 ,       { "url": "views/bios/edit_modal_view.coffee" }
 
 ,       { "url": "views/bio_items/edit_view.coffee" }
+,       { "url": "views/bio_items/index_view.coffee" }
+,       { "url": "views/bio_items/item_view.coffee" }
 
 ,       { "url": "views/videos/index_view.coffee" }
 ,       { "url": "views/videos/vimeo_view.coffee" }

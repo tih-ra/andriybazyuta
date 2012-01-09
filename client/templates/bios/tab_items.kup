@@ -1,8 +1,8 @@
 div ->
   form class: 'form-stacked', ->
     fieldset ->
-      div class: 'clearfix', id: 'bios_items_wrapper', ->
+      div class: 'clearfix bios_items_edit', ->
 	
 div class: 'modal-footer', ->
-  button class: 'btn primary', id: 'save_edited', -> 'Save Item'
+  button class: 'btn primary', id: 'save_bio_items', -> 'Save Item'
   button class: 'btn primary', id: 'add_bio_item', -> 'Add Item'	

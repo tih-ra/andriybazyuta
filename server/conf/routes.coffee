@@ -34,6 +34,9 @@ module.exports = (app, vimeo) ->
   app.del('/bios/:id', bios.destroy)
   app.post('/bios/:id', bios.update)
   app.post('/bios/:id/items', bios.item_post)
+  app.post('/bios/:id/items/:item_id', bios.item_update)
+  app.del('/bios/:id/items/:item_id', bios.item_destroy)
+
 
   app.get '/images/:version/:file', (req, res) ->
     res.redirect(app.alleup.url(req.params['file'], req.params['version']))
