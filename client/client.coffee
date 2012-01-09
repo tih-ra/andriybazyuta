@@ -12,3 +12,4 @@ $(document).ready ->
     (app.Routers[k] = new router if k isnt 'Root') for k,router of app.Routers
     app.Routers.Root = new app.Routers.Root
     Backbone.history.start()
+    

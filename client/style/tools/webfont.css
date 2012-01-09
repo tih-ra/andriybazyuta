@@ -28,6 +28,7 @@ a.webfont:hover {
 .webfont.code:before { content: 'H'; }
 .webfont.icons:before { content: '¹'; }
 .webfont.link:before { content: 'K'; }
+.webfont.sync:before { content: 'V'; }
 
 
 

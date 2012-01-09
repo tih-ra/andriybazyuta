@@ -30,7 +30,8 @@ class Views.Bios.EditModal extends Backbone.View
     @$('.tabs').tabs()
     @tabEdit()
     @tabItems()   
-    
+    Base.Tools.updateButtonStatus()
+
     @model.trigger('edit:modal', true)
     
     @

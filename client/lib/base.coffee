@@ -2,12 +2,12 @@ window.Base = {}
 @Base.Tools =
   updateButtonStatus: ->
     $('input').keypress ->
-      $('.updated_button').addClass('webfont icons')
+      $('.updated_button').addClass('webfont sync')
     $('textarea').keypress ->
-      $('.updated_button').addClass('webfont icons')
+      $('.updated_button').addClass('webfont sync')
 
     $('.updated_button').click ->
-      $('.updated_button').removeClass('webfont icons')
+      $('.updated_button').removeClass('webfont sync')
   
   uploader: (path, object, parent, button) ->
     uploader = new plupload.Uploader
