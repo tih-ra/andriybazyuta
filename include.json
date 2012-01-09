@@ -127,7 +127,6 @@
 ,       { "url": "routers/root_router.coffee" }
 
 ,       { "url": "style/tools/bootstrap.custom.css" }
-,       { "url": "style/tools/iconic.css" }
 ,       { "url": "style/tools/webfont.css" }
 ,       { "url": "style/tools/jquery.fancybox.css" }
 ,       { "url": "style/tools/highlight.css" }
