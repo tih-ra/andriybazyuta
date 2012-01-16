@@ -12,3 +12,17 @@ dev:
   vimeo:
     consumerKey: "a3a8e7615f737162c5efb58b4bb26f8c"
     consumerSecret: "50cde6c5783b4f9c"
+prod:
+  db: 
+    host: localhost
+    port: 27017
+    database: andriybazyuta
+    user: admin
+    passwd: passwd
+  app:
+    port: 3002
+    url: "http://localhost:3002"
+    storage: dir
+  vimeo:
+    consumerKey: "a3a8e7615f737162c5efb58b4bb26f8c"
+    consumerSecret: "50cde6c5783b4f9c"

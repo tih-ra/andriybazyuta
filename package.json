@@ -8,7 +8,7 @@
 ,   "main": ""
 ,   "bin": {}
 ,   "dependencies": {
-        "kassit":">=0.1.5"
+        "kassit":"git://github.com/tih-ra/kassit.git#master"
 ,	   "mongoose": "" 
 ,	   "alleup": "0.1.0" 
 ,      "vimeo-client": "0.1.7"

@@ -1,0 +1,15 @@
+{
+   "dir": "dep.prod"
+,  "copy": {
+  	 "client.prod/": "client.prod/"
+  ,  "prod.html": "andriybazyuta.html"
+  ,  "server.prod/prod.js": "app.js"
+  ,  "server.dev/api/": "api/"
+  ,  "config/": "config/"
+  ,  "server.dev/config/routes.js": "config/routes.js"
+  ,  "alleup_conf.json": "alleup_conf.json"
+  ,  "package.json": "package.json"
+  ,  "node_modules/": "node_modules/"
+  ,  "static/": "static/"
+  }
+}
