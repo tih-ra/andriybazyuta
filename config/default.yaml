@@ -14,13 +14,13 @@ dev:
     consumerSecret: "50cde6c5783b4f9c"
 prod:
   db: 
-    host: localhost
-    port: 27017
+    host: dbh86.mongolab.com
+    port: 27867
     database: andriybazyuta
-    user: admin
-    passwd: passwd
+    user: andriybazyuta
+    passwd: andriybazyuta
   app:
-    port: 3002
+    port: 80
     url: "http://localhost:3002"
     storage: dir
   vimeo:
