@@ -35,4 +35,4 @@ div class: 'modal-body', ->
 
 
 div class: 'modal-footer', ->
-	button class: 'btn primary', id: 'save_main', -> 'Save'
+	button class: 'btn primary', id: 'save_main', -> a class: 'updated_button', -> span 'Save'

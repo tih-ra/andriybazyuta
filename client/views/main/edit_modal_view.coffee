@@ -44,6 +44,9 @@ class Views.Main.EditModal extends Backbone.View
 
     $(document.body).append @el
     @initUploader()
+
+    Base.Tools.updateButtonStatus()
+
     @model.trigger('edit:modal', true)
     @model.trigger('attach:uploader', true)
 

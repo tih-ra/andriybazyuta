@@ -15,4 +15,4 @@ div ->
           textarea name: 'body', rows: 5, class: 'span8', -> @model.get('body')
 	
 div class: 'modal-footer', ->
-  button class: 'btn primary', id: 'save_edited', -> 'Save'
+  button class: 'btn primary', id: 'save_edited', ->  a class: 'updated_button', -> span 'Save'

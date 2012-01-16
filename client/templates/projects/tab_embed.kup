@@ -9,4 +9,4 @@ div class: 'well', ->
 div class: 'embeds', ->
 	
 div class: 'modal-footer', ->
-  button class: 'btn primary', id: 'save_embed', -> 'Add Embed'
+  button class: 'btn primary', id: 'save_embed', ->  a class: 'updated_button', -> span 'Add Embed'

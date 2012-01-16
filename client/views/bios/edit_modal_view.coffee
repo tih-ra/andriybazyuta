@@ -77,6 +77,7 @@ class Views.Bios.TabItems extends Backbone.View
   addOne: (item) ->
     view = new Views.BioItems.Edit(model: item)
     @$('.bios_items_edit').prepend view.render().el
+    Base.Tools.updateButtonStatus()
 
   addItem: ->
     model = new Andriybazyuta.Models.BioItem

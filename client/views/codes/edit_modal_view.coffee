@@ -33,6 +33,8 @@ class Views.Codes.EditModal extends Backbone.View
     $(@el).bind 'hidden', -> _this.onClose()
 
     $(document.body).append @el
+
+    Base.Tools.updateButtonStatus()
     @model.trigger('edit:modal', true)
     
     @

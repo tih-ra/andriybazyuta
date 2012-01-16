@@ -45,6 +45,8 @@ class Views.Projects.EditModal extends Backbone.View
     @tabVimeo()
     @tabEmbed()
 
+    Base.Tools.updateButtonStatus()
+
     @model.trigger('edit:modal', true)
     @model.trigger('attach:uploader', true)
     @
