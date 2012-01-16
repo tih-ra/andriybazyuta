@@ -12,7 +12,8 @@
 ,	   "mongoose": "" 
 ,	   "alleup": "0.1.0" 
 ,      "vimeo-client": "0.1.7"
-,	   "underscore": "" 
+,	   "underscore": ""
+,      "config": ""
     }
 ,   "devDependencies": {}
 ,   "engines": {

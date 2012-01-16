@@ -5,28 +5,32 @@ vimeo = require('vimeo-client')
 alleupInit = require('alleup')
 
 
+
 # REST #
  
 
 app = Andriybazyuta = process['Andriybazyuta'] = express.createServer()
 app.mode = if !(getMode?()) then 'prod' else getMode()
-app.port = 3002
+
+CONFIG = require('config')[app.mode]
+
+app.port = CONFIG.app.port
 
 require.paths.unshift( if app.mode is 'prod' then './api' else './server.dev/api');
-require.paths.unshift( if app.mode is 'prod' then './conf' else './server.dev/conf');
+require.paths.unshift( if app.mode is 'prod' then './config' else './server.dev/config');
 app.sessions_helper = require('helpers/sessions')
 
 app.use(express.logger(format: "\u001b[1m :date \u001b[1m:method\u001b[0m \u001b[33m:url\u001b[0m :response-time ms\u001b[0m :status")) unless app.mode is 'prod'
 
-app.db = mongoose.createConnection("mongo://admin:passwd@localhost:27017/andriybazyuta")
+app.db = mongoose.createConnection("mongo://#{CONFIG.db.user}:#{CONFIG.db.passwd}@#{CONFIG.db.host}:#{CONFIG.db.port}/#{CONFIG.db.database}")
 
 app.use(express.bodyParser())
 app.use(express.cookieParser())
 app.use(express.session({ secret: '535875805420801' }))
 app.use vimeo.middleware(
-  consumerKey: "a3a8e7615f737162c5efb58b4bb26f8c"
-  consumerSecret: "50cde6c5783b4f9c"
-  baseURL: "http://localhost:3002"
+  consumerKey: CONFIG.vimeo.consumerKey
+  consumerSecret: CONFIG.vimeo.consumerSecret
+  baseURL: CONFIG.app.url
   logging: "debug"
   afterLogin: "/"
   afterLogout: "/"
@@ -34,7 +38,7 @@ app.use vimeo.middleware(
 )
 
 
-app.alleup = new alleupInit({storage : 'dir', config_file: "./alleup_conf.json"})
+app.alleup = new alleupInit({storage : CONFIG.app.storage, config_file: "./alleup_conf.json"})
 
 
 require('routes.js')(app, vimeo)
