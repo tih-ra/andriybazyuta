@@ -1,4 +1,4 @@
-div class: 'span2', -> span class: 'date', -> '2012-22-12'
+div class: 'span2', -> span class: 'date', -> if new Date(@model.get('eventedAt')).toString('MM') is 'NaN' then Date.parse(@model.get('eventedAt')).toString('MMM-yyyy') else new Date(@model.get('eventedAt')).toString('MMM-yyyy')
 div class: 'span7', -> @model.get('description')
 hr()
 

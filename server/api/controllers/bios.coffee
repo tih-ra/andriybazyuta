@@ -57,7 +57,7 @@ exports.item_update = (req, res) ->
 
         bio.save()
 
-        res.end()
+        res.send(bio.items.id(req.params.item_id))
 
 exports.item_destroy = (req, res) ->
   app.sessions_helper.auth_required req, res, (authorized) ->

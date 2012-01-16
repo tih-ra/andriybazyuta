@@ -76,13 +76,13 @@ class Views.Bios.TabItems extends Backbone.View
 
   addOne: (item) ->
     view = new Views.BioItems.Edit(model: item)
-    @$('.bios_items_edit').append view.render().el
+    @$('.bios_items_edit').prepend view.render().el
 
   addItem: ->
     model = new Andriybazyuta.Models.BioItem
     model.collection = @items
 
-    model.save {eventedAt : '2012-02-10', description: 'test'},
+    model.save {eventedAt : Date.parse('today').toString('MM-dd-yyyy'), description: 'Edit please'},
       success: (model, response) =>
         @items.add response
 
@@ -93,13 +93,12 @@ class Views.Bios.TabItems extends Backbone.View
     @items.each @saveOne
 
   saveOne: (item)->
-    item.set @itemUpdateAttributes(item.get('_id'))
     item.save @itemUpdateAttributes(item.get('_id')),
-      success: (item) =>
-        console.log(item)
+      success: (i) =>
+        item.set i
 
   itemUpdateAttributes: (id)->
-    eventedAt : @$("input[name='evendedAt[#{id}]']").val()
+    eventedAt : Date.parse(@$("input[name='eventedAt[#{id}]']").val()).toString('MM-dd-yyyy')
     description: @$("input[name='description[#{id}]']").val()
 	
 

@@ -15,7 +15,7 @@
 ,       { "url": "lib/jquery.fancybox.pack.js" }
 ,				{ "url": "lib/jquery.scrollTo-min.js" }
 ,       { "url": "lib/highlight.js" }
-
+,       { "url": "lib/date.js" }
 
 
 ,       { "url": "lib/kassit.coffee"}
