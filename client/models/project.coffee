@@ -7,7 +7,7 @@ class Andriybazyuta.Models.Project extends Backbone.Model
     _id: null
 
   initialize: ->
-    @items = new Andriybazyuta.Collections.Items(@get('items'), {url: '/projects'})
+    @items = new Andriybazyuta.Collections.Items(@get('items'), {url: "/projects/#{@get('_id')}/items"})
     @videos = new Andriybazyuta.Collections.Videos(@get('videos'), {url: "/projects/#{@get('_id')}/videos"})
     @embeds = new Andriybazyuta.Collections.Embeds(@get('embeds'), {url: "/projects/#{@get('_id')}/embeds"})
 

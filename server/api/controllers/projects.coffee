@@ -27,7 +27,7 @@ exports.destroy = (req, res) ->
 	
         project.items.forEach (item) ->
           app.alleup.remove(item.file, (err) ->
-            if err then res.end(err)
+            if err then console.log(err)
           , 'project')
 
         project.remove (err) ->
@@ -59,6 +59,22 @@ exports.item_post = (req, res) ->
 
           res.end()
       , 'project')
+
+exports.item_destroy = (req, res) ->
+  app.sessions_helper.auth_required req, res, (authorized) ->
+    if authorized
+
+      Project.findById req.params.id, (err, project) ->
+        item = project.items.id(req.params.item_id)
+        
+        app.alleup.remove(item.file, (err) ->
+          if err then res.send(err)
+        , 'project')
+        item.remove()
+        project.save()
+
+        res.end('deleted')
+
 
 exports.video_post = (req, res) ->
   app.sessions_helper.auth_required req, res, (authorized) ->

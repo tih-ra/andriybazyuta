@@ -5,7 +5,7 @@ class Views.Projects.Gallery extends Backbone.View
   id: 'gallery'
   template: Templates['projects.gallery']
   events:
-    'click .x-alt' : 'close'
+    'click .gallery_close' : 'close'
 
 
   addItemsPreview: ->

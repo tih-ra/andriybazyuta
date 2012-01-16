@@ -1,5 +1,5 @@
 div class: 'header', ->
-  a class: 'webfont x-alt', '' 
+  a class: 'webfont x-alt gallery_close', '' 
   h1 Base.Tools.styleTitle(@model.get('title'))
   p @model.get('description').substr(0, 400)+' ...' if @model.has('description')
   p ->

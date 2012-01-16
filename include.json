@@ -117,6 +117,7 @@
 
 ,       { "url": "views/items/preview_view.coffee" }
 ,       { "url": "views/items/gallery_view.coffee" }
+,       { "url": "views/items/image_view.coffee" }
 
 ,       { "url": "views/main/edit_modal_view.coffee" }
 ,       { "url": "views/main/edit_view.coffee" }
