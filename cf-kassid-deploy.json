@@ -9,7 +9,6 @@
   ,  "server.dev/config/routes.js": "config/routes.js"
   ,  "alleup_conf.json": "alleup_conf.json"
   ,  "package.json": "package.json"
-  ,  "node_modules/": "node_modules/"
   ,  "static/": "static/"
   }
 }
