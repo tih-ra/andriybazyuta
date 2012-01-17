@@ -5,4 +5,3 @@ client.dev/
 server.dev/
 client.prod/
 server.prod/
-dep.prod/

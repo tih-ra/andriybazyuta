@@ -1,0 +1,30 @@
+{
+	"variants": {
+		"project": {
+		  "resize": {
+			  "preview": "800x600",
+			  "small": "300x300"
+		  },
+		  "crop": {
+			  "banner": "280x444",
+			  "mini": "114x221"
+		  }
+		},
+		"main": {
+			"resize": {
+				"main": "820x820"
+			}
+		}
+	},
+	
+	"storage": {
+		"aws": {
+			"key" : "AKIAJEWPDNJCMR3Y3ARA",
+			"secret" : "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",
+			"bucket" : "andriybazyuta"
+		},
+		"dir": {
+			"path" : "./static/images/"
+		}
+	}
+}
