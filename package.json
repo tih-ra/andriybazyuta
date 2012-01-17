@@ -1,22 +1,26 @@
 {
-    "name": "Andriybazyuta"
-,   "description": ""
-,   "author": ""
-,   "version": "0.0.1"
-,   "licenses": []
-,   "repository": {}
-,   "main": ""
-,   "bin": {}
-,   "dependencies": {
-        "kassit":"git://github.com/tih-ra/kassit.git#master"
-,	   "mongoose": "" 
-,	   "alleup": "0.1.0" 
-,      "vimeo-client": "0.1.7"
-,	   "underscore": ""
-,      "config": ""
-    }
-,   "devDependencies": {}
-,   "engines": {
-        "node": "~0.4"
-    }
+  "description": "",
+  "author": "",
+  "version": "0.0.1-1",
+  "licenses": [],
+  "repository": {},
+  "main": "",
+  "bin": {},
+  "dependencies": {
+    "kassit": "git://github.com/tih-ra/kassit.git#master",
+    "mongoose": "",
+    "alleup": "0.1.0",
+    "vimeo-client": "0.1.7",
+    "underscore": "",
+    "config": ""
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": "~0.4"
+  },
+  "subdomain": "andriy.bazyuta",
+  "scripts": {
+    "start": "app.js"
+  },
+  "name": "andriy.bazyuta"
 }

@@ -21,8 +21,8 @@ prod:
     passwd: andriybazyuta
   app:
     port: 80
-    url: "http://localhost:3002"
-    storage: dir
+    url: "http://andriy.bazyuta.me"
+    storage: aws
   vimeo:
-    consumerKey: "a3a8e7615f737162c5efb58b4bb26f8c"
-    consumerSecret: "50cde6c5783b4f9c"
+    consumerKey: "03b12c924d2906eee7351375a2677c6f"
+    consumerSecret: "ab366fd1e7fb6dfd"
