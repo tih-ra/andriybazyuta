@@ -23,6 +23,8 @@ a.webfont:hover {
 
 .webfont.x-alt:before { content: '×'; }
 .webfont.vimeo:before { content: 'm'; }
+.webfont.twitter:before { content: 't'; }
+.webfont.facebook:before { content: 'f'; }
 .webfont.movie:before { content: 'M'; }
 .webfont.youtube:before { content: 'y'; }
 .webfont.code:before { content: 'H'; }
