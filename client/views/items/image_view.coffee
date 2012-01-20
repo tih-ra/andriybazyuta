@@ -12,6 +12,7 @@ class Views.Items.Image extends Backbone.View
 
   addImg: ->
     img = @make 'img', {src: @model.file_url('preview')}
+    $(img).load -> Base.Tools.hide_loader()
     $(@el).prepend(img)
 
   delete: ->
