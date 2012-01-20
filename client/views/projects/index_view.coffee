@@ -26,5 +26,4 @@ class Views.Projects.Index extends Backbone.View
 
   render: ->
     $(@el).html @template.render()
-     
     @

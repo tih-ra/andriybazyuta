@@ -1,5 +1,17 @@
 window.Base = {}
 @Base.Tools =
+  show_loader: ->
+    $(document.body).prepend('<div id="canvasloader-container"></div>')
+    cl = new CanvasLoader('canvasloader-container')
+    cl.setShape('roundRect')
+    cl.setDiameter(78)
+    cl.setDensity(18)
+    cl.setSpeed(1)
+    cl.show()
+
+  hide_loader: ->
+    $('#canvasloader-container').remove()
+
   updateButtonStatus: ->
     $('input').keypress ->
       $('.updated_button').addClass('webfont sync')

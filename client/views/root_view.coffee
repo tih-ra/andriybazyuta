@@ -25,6 +25,11 @@ class Root.Layout extends Backbone.View
     $(@el).html @template.render()
     $(document.body).html @el
     
+    $.ajaxSetup
+      beforeSend: ->
+        Base.Tools.show_loader()
+      complete: ->
+        Base.Tools.hide_loader()
     
   menuSelect: (e)->
     @$('.menu_item').removeClass('selected')
@@ -45,6 +50,7 @@ class Root.Layout extends Backbone.View
   bios: ->
     view = new Views.Bios.Index
     $('#root').html view.render().el
+  
 
 class Root.Index extends Backbone.View
   template: Templates['root.index']
