@@ -12,7 +12,6 @@ class Views.Embeds.Embed extends Backbone.View
     @model.bind 'destroy', @remove, @  
 
   delete: ->
-    console.log @model
     @model.destroy 
       success: (model, response) ->
         console.log response       
