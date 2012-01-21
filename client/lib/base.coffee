@@ -1,6 +1,9 @@
 window.Base = {}
 @Base.Tools =
   show_loader: ->
+    if $('#canvasloader-container').length
+      return true
+
     $(document.body).prepend('<div id="canvasloader-container"></div>')
     cl = new CanvasLoader('canvasloader-container')
     cl.setShape('roundRect')
