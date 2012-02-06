@@ -2,7 +2,7 @@
   "name": "Andriybazyuta",
   "description": "",
   "author": "",
-  "version": "0.0.1-8",
+  "version": "0.0.1-9",
   "licenses": [],
   "repository": {},
   "main": "",
@@ -11,7 +11,7 @@
     "kassit": "git://github.com/tih-ra/kassit.git#master",
     "mongoose": "",
     "alleup": "0.1.0",
-    "vimeo-client": "0.1.7",
+    "vimeo-client": "0.1.8",
     "underscore": "",
     "config": ""
   },
